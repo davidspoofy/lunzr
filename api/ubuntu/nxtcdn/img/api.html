@@ -1,449 +1,1866 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Autism Care Center | Supportive Services for Individuals with Autism</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<script>
-tailwind.config = {
-theme: {
-extend: {
-colors: {
-primary: '#2563eb',
-secondary: '#0d9488',
-accent: '#7c3aed',
-light: '#f8fafc',
-dark: '#0f172a',
-calm: '#dbeafe'
-}
-}
-}
-}
-</script>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-body {
-font-family: 'Poppins', sans-serif;
-}
-.hero-bg {
-background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.9)), url('https://images.unsplash.com/photo-1588872247719-40a4815a4938?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80');
-background-size: cover;
-background-position: center;
-}
-.service-card:hover {
-transform: translateY(-5px);
-box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-}
-.testimonial-card {
-transition: all 0.3s ease;
-}
-.testimonial-card:hover {
-transform: scale(1.01);
-}
-.footer-link:hover {
-color: #0d9488;
-transition: color 0.3s ease;
-}
-/* Autism-friendly design elements */
-.calm-bg {
-background-color: #f0f9ff;
-}
-.soothing-border {
-border-color: #dbeafe;
-}
-.autism-blue {
-background-color: #dbeafe;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="icon" href="https://ssl.gstatic.com/classroom/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Google+Sans:100,300,400,500,700,900,100i,300i,400i,500i,700i,900i">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --custom-gradient-start: #6e8efb; /* Default start color */
+            --custom-gradient-end: #a777e3;   /* Default end color */
+            --custom-gradient-direction: 135deg; /* Default direction */
+        }
+        body {
+            font-family: 'Google Sans', sans-serif;
+            transition: background-color 0.3s, color 0.3s;
+            background-color: #f3f4f6;
+        }
+        body.dark {
+            background-color: #121212 !important;
+            color: #e0e0e0
+        }
+        .dark .bg-white {
+            background-color: #1e1e1e;
+        }
+        .dark .text-gray-800 {
+            color: #f0f0f0;
+        }
+        .dark .text-gray-700 {
+            color: #d1d5db;
+        }
+        .dark .text-gray-600 {
+            color: #b0b0b0;
+        }
+        .dark .border-gray-300 {
+            border-color: #444;
+        }
+        .dark .bg-gray-100 {
+            background-color: #2d3748;
+        }
+        .dark .bg-gray-200 {
+            background-color: #333;
+        }
+        .dark .border-gray-300 {
+            border-color: #555;
+        }
+        .dark .text-gray-500 {
+            color: #888;
+        }
+        .dark .bg-gray-700 {
+            background-color: #2a2a2a;
+        }
+        .dark .hover\:bg-gray-200:hover {
+            background-color: #374151;
+        }
+        .dark .hover\:bg-gray-300:hover {
+            background-color: #4b5563;
+        }
+        .dark .hover\:text-gray-700:hover {
+            color: #fff;
+        }
+        .dark #archiveList li {
+             background-color: #2d3748;
+             border-color: #4a5568;
+        }
+        .dark .history-card:hover {
+            background-color: #374151;
+        }
+        .page-transition {
+            transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+            transform: translateY(16px);
+            opacity: 0;
+        }
+        .page-transition.active {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        .tab-button.active {
+            border-bottom: 2px solid #3b82f6;
+            color: #3b82f6;
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        input[type="checkbox"] {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            display: inline-block;
+            height: 1.25rem;
+            width: 1.25rem;
+            background-color: #e5e7eb;
+            border: 2px solid #9ca3af;
+            border-radius: 0.25rem;
+            cursor: pointer;
+            transition: background-color 0.2s, border-color 0.2s;
+            flex-shrink: 0;
+        }
+        input[type="checkbox"]:checked {
+            background-color: #3b82f6;
+            border-color: #3b82f6;
+        }
+        input[type="checkbox"]:checked:before {
+            content: '';
+            display: block;
+            width: 0.5rem;
+            height: 0.75rem;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg) translate(25%, -25%);
+        }
+        .dark input[type="checkbox"] {
+            background-color: #374151;
+            border-color: #6b7280;
+        }
+        .dark input[type="checkbox"]:checked {
+            background-color: #3b82f6;
+            border-color: #3b82f6;
+        }
+        .dark input[type="text"] {
+            background-color: #2d3748;
+            color: #e2e8f0;
+            border-color: #4a5568;
+        }
+        .history-card {
+            cursor: pointer;
+        }
+        .history-loop-container, .history-loop-container input, .history-loop-container label {
+            cursor: pointer;
+        }
+        .history-loop-container {
+            flex-shrink: 0;
+        }
+        .history-loop-container:hover {
+            background-color: rgba(0,0,0,0.05);
+            border-radius: 6px;
+        }
+        .dark .history-loop-container:hover {
+             background-color: rgba(255,255,255,0.08);
+        }
+        /* --- Bubble Animation Styles --- */
+        #bubble-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            overflow: hidden;
+            pointer-events: none;
+        }
+        /* Hide bubbles when performance mode is active */
+        body.performance-mode #bubble-background {
+            display: none;
+        }
+        .bubble {
+            position: absolute;
+            bottom: -100px;
+            background-color: rgba(59, 130, 246, 0.6);
+            box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+            border-radius: 50%;
+            animation: floatUp linear infinite;
+        }
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0) translateX(0);
+                opacity: 1;
+            }
+            50% {
+                transform: translateX(20px);
+            }
+            100% {
+                transform: translateY(-120vh) translateX(-20px);
+                opacity: 0;
+            }
+        }
+        #main-container {
+            position: relative;
+            z-index: 1;
+        }
+        .incognito-badge {
+            background: linear-gradient(135deg, var(--custom-gradient-start), var(--custom-gradient-end));
+            color: white;
+            padding: 0.25rem 0.5rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-left: 0.5rem;
+            opacity: 0;
+            transform: scale(0.8);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        .incognito-badge.show {
+            opacity: 1;
+            transform: scale(1);
+        }
+        .incognito-toggle {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #e5e7eb;
+            color: #4b5563;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .incognito-toggle.active {
+            background: linear-gradient(135deg, var(--custom-gradient-start), var(--custom-gradient-end));
+            color: white;
+            transform: rotate(20deg) scale(1.1);
+            box-shadow: 0 4px 8px rgba(106, 142, 251, 0.4);
+        }
+        .dark .incognito-toggle {
+            background-color: #374151;
+            color: #d1d5db;
+        }
+        .dark .incognito-toggle.active {
+            background: linear-gradient(135deg, var(--custom-gradient-start), var(--custom-gradient-end));
+            color: white;
+        }
+        /* Performance Mode Toggle Button */
+        .performance-mode-toggle {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #e5e7eb;
+            color: #4b5563;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .performance-mode-toggle.performance-mode-active {
+            background: linear-gradient(135deg, #4ade80, #22c55e); /* Green gradient */
+            color: white;
+            transform: scale(1.1);
+            box-shadow: 0 4px 8px rgba(34, 197, 94, 0.4);
+        }
+        .dark .performance-mode-toggle {
+            background-color: #374151;
+            color: #d1d5db;
+        }
+        .dark .performance-mode-toggle.performance-mode-active {
+            background: linear-gradient(135deg, #4ade80, #22c55e); /* Green gradient */
+            color: white;
+        }
+        /* Custom Gradient Settings */
+        .gradient-preview {
+            width: 100%;
+            height: 100px;
+            border-radius: 8px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+        }
+        /* Gradient borders for various elements */
+        .border-gradient {
+            border: 2px solid transparent;
+            background-image: linear-gradient(white, white), linear-gradient(var(--custom-gradient-direction), var(--custom-gradient-start), var(--custom-gradient-end));
+            background-origin: border-box;
+            background-clip: padding-box, border-box;
+        }
+        .dark .border-gradient {
+            background-image: linear-gradient(#1e1e1e, #1e1e1e), linear-gradient(var(--custom-gradient-direction), var(--custom-gradient-start), var(--custom-gradient-end));
+        }
+        .input-gradient {
+            background-image: linear-gradient(white, white), linear-gradient(var(--custom-gradient-direction), var(--custom-gradient-start), var(--custom-gradient-end));
+            background-origin: border-box;
+            background-clip: padding-box, border-box;
+        }
+        .dark .input-gradient {
+            background-image: linear-gradient(#2d3748, #2d3748), linear-gradient(var(--custom-gradient-direction), var(--custom-gradient-start), var(--custom-gradient-end));
+        }
+        /* Cloak Settings Button */
+        .cloak-settings-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            background-color: #e5e7eb;
+            color: #4b5563;
+            transition: all 0.2s;
+            border: 2px solid transparent;
+            background-image: linear-gradient(white, white), linear-gradient(var(--custom-gradient-direction), var(--custom-gradient-start), var(--custom-gradient-end));
+            background-origin: border-box;
+            background-clip: padding-box, border-box;
+        }
+        .dark .cloak-settings-button {
+            background-image: linear-gradient(#2d3748, #2d3748), linear-gradient(var(--custom-gradient-direction), var(--custom-gradient-start), var(--custom-gradient-end));
+        }
+        .cloak-settings-button:hover {
+            background-image: linear-gradient(#d1d5db, #d1d5db), linear-gradient(var(--custom-gradient-direction), var(--custom-gradient-start), var(--custom-gradient-end));
+        }
+        .dark .cloak-settings-button:hover {
+            background-image: linear-gradient(#374151, #374151), linear-gradient(var(--custom-gradient-direction), var(--custom-gradient-start), var(--custom-gradient-end));
+        }
+        /* Custom Cursor Styles */
+        .cursor-dot {
+            position: fixed;
+            width: 12px;
+            height: 12px;
+            background-color: #3b82f6;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            transform: translate(-50%, -50%);
+            transition: transform 0.1s ease;
+        }
+        .cursor-dot.active {
+            transform: translate(-50%, -50%) scale(1.2);
+        }
+        .cursor-trail {
+            position: fixed;
+            width: 8px;
+            height: 8px;
+            background-color: rgba(59, 130, 246, 0.7);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9998;
+            transform: translate(-50%, -50%);
+            transition: opacity 0.2s ease;
+        }
+        /* Hide cursor trail when performance mode is active */
+        body.performance-mode .cursor-trail {
+            opacity: 0 !important; /* Force opacity to 0 */
+        }
+        /* Custom Cursor Settings */
+        .cursor-settings-container {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 10000;
+            align-items: center;
+            justify-content: center;
+        }
+        .cursor-settings-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+        .dark .cursor-settings-content {
+            background: #1e1e1e;
+            color: #e0e0e0;
+        }
+        .close-cursor-settings {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            background: none;
+            border: none;
+            color: #6b7280;
+        }
+        .dark .close-cursor-settings {
+            color: #d1d5db;
+        }
+        .cursor-preview {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 20px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f3f4f6;
+        }
+        .dark .cursor-preview {
+            background-color: #2d3748;
+        }
+        .cursor-preview .cursor-dot {
+            position: static;
+            transform: none;
+        }
+        .cursor-preview .cursor-trail {
+            position: static;
+            transform: none;
+        }
+        .cursor-color-picker {
+            width: 30px;
+            height: 30px;
+            border: none;
+            background: none;
+            cursor: pointer;
+        }
+    </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
-<!-- Header/Navigation -->
-<header class="sticky top-0 z-50 bg-white shadow-md">
-<div class="container mx-auto px-4">
-<div class="flex items-center justify-between py-4">
-<div class="flex items-center space-x-2">
-<div class="bg-primary w-10 h-10 rounded-full flex items-center justify-center">
-<i class="fas fa-brain text-white text-xl"></i>
-</div>
-<h1 class="text-2xl font-bold text-primary">Autism Care Center</h1>
-</div>
+<body class="flex items-center justify-center min-h-screen p-4 transition-colors">
+    <div id="bubble-background"></div>
+    <div id="main-container" class="bg-white p-8 rounded-xl shadow-lg w-full max-w-4xl text-center transition-colors border-gradient">
+        <div id="mainPage" class="page-transition">
+            <div class="flex justify-between items-center mb-6">
+                <div class="flex items-center space-x-3">
+                    <h1 class="text-3xl font-bold text-gray-800">Lunar Launcher V2.6</h1> <!-- Rebranded title -->
+                    <span id="incognitoBadge" class="incognito-badge">Incognito</span>
+                </div>
+                <div class="flex space-x-2">
+                    <button id="archiveButton" class="p-2 rounded-full bg-gray-200 text-gray-800 hover:bg-gray-300 transition-colors text-sm font-medium border-gradient">History</button>
+                    <button id="settingsButton" class="p-2 rounded-full bg-gray-200 text-gray-800 hover:bg-gray-300 transition-colors text-sm font-medium border-gradient">Settings</button>
+                    <button id="updateLogButton" class="p-2 rounded-full bg-gray-200 text-gray-800 hover:bg-gray-300 transition-colors text-sm font-medium border-gradient">Update Log</button>
+                    <button id="incognitoToggleButton" class="incognito-toggle border-gradient">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                        </svg>
+                    </button>
+                    <!-- Added Performance Mode Toggle Button -->
+                    <button id="performanceModeToggle" class="performance-mode-toggle border-gradient">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                    </button>
+                    <button id="themeToggle" class="p-2 rounded-full bg-gray-200 text-gray-800 hover:bg-gray-300 transition-colors border-gradient">
+                        <svg id="moonIcon" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                        </svg>
+                        <svg id="sunIcon" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <p id="greetingText" class="text-xl font-medium text-gray-800 mb-4"></p>
+            <p class="text-gray-600 mb-4">Enter a YouTube video or playlist URL or ID to launch it in a new tab.</p>
+            <div class="mb-4">
+                <input type="text" id="videoInput" placeholder="Paste YouTube URL or ID here" class="flex-grow w-full px-4 py-3 input-gradient rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200">
+            </div>
+            <div class="flex items-center justify-center mb-6">
+                <input type="checkbox" id="loopCheckbox" class="h-5 w-5 rounded text-blue-600 focus:ring-2 focus:ring-blue-500">
+                <label for="loopCheckbox" class="ml-2 text-gray-700 select-none">Loop video (only for single videos)</label>
+            </div>
+            <button id="goButton" class="bg-gradient-to-r from-blue-500 to-purple-600 text-white font-bold py-3 px-6 rounded-lg shadow-md hover:from-blue-600 hover:to-purple-700 transition duration-200 w-full border-gradient">Launch</button>
+            <p><small>livid was here</small></p>
+        </div>
+        <div id="archivePage" class="page-transition hidden">
+            <div class="flex items-center mb-6">
+                <button id="backFromArchiveButton" class="p-2 rounded-full bg-gray-200 text-gray-800 hover:bg-gray-300 transition-colors text-sm font-medium border-gradient">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
+                </button>
+                <h1 class="text-3xl font-bold text-gray-800 ml-4">Launch History</h1>
+            </div>
+            <ul id="archiveList" class="text-left max-h-96 overflow-y-auto space-y-3 pr-2">
+            </ul>
+            <button id="clearHistoryBtn" class="bg-gradient-to-r from-red-500 to-orange-600 text-white font-bold py-2 px-4 rounded-lg shadow-md hover:from-red-600 hover:to-orange-700 transition duration-200 mt-6 border-gradient">Clear History</button>
+        </div>
+        <div id="settingsPage" class="page-transition hidden">
+            <div class="flex justify-between items-center mb-6">
+                <button id="backFromSettingsButton" class="p-2 rounded-full bg-gray-200 text-gray-800 hover:bg-gray-300 transition-colors text-sm font-medium border-gradient">Back</button>
+                <h2 class="text-2xl font-bold text-gray-800">Settings</h2>
+                <div class="flex space-x-2">
+                    <button id="cloakSettingsButton" class="p-2 rounded-full bg-gray-200 text-gray-800 hover:bg-gray-300 transition-colors text-sm font-medium border-gradient">Cloak</button>
+                    <button id="profileButton" class="p-2 rounded-full bg-gray-200 text-gray-800 hover:bg-gray-300 transition-colors text-sm font-medium border-gradient">Profile</button>
+                    <button id="helpButton" class="p-2 rounded-full bg-gray-200 text-gray-800 hover:bg-gray-300 transition-colors text-sm font-medium border-gradient">Help</button>
+                    <button id="creditsButton" class="p-2 rounded-full bg-gray-200 text-gray-800 hover:bg-gray-300 transition-colors text-sm font-medium border-gradient">Credits</button>
+                    <button id="cursorSettingsButton" class="p-2 rounded-full bg-gray-200 text-gray-800 hover:bg-gray-300 transition-colors text-sm font-medium border-gradient">Cursor</button>
+                </div>
+            </div>
+            <div class="text-left">
+                <h3 class="text-xl font-semibold text-gray-800 mb-4">Performance Mode</h3>
+                <div class="flex items-center mb-4">
+                    <input type="checkbox" id="performanceModeCheckbox" class="h-5 w-5 rounded text-blue-600 focus:ring-2 focus:ring-blue-500">
+                    <label for="performanceModeCheckbox" class="ml-2 text-gray-700 select-none">Enable Performance Mode (Disables Bubbles and Cursor Trail)</label>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-800 mb-4">Custom Gradient Settings</h3>
+                <div class="space-y-4">
+                    <div>
+                        <label for="gradientStartColor" class="block text-gray-700 mb-2">Gradient Start Color:</label>
+                        <input type="color" id="gradientStartColor" class="w-full px-4 py-2 input-gradient rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+                    <div>
+                        <label for="gradientEndColor" class="block text-gray-700 mb-2">Gradient End Color:</label>
+                        <input type="color" id="gradientEndColor" class="w-full px-4 py-2 input-gradient rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+                    <div>
+                        <label for="gradientDirection" class="block text-gray-700 mb-2">Gradient Direction:</label>
+                        <select id="gradientDirection" class="w-full px-4 py-2 input-gradient rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <option value="135deg">Top Right</option> <!-- Changed default to match CSS var -->
+                            <option value="to top">Top</option>
+                            <option value="to bottom">Bottom</option>
+                            <option value="to left">Left</option>
+                            <option value="to right">Right</option>
+                            <option value="to top right">Top Right</option>
+                            <option value="to bottom right">Bottom Right</option>
+                        </select>
+                    </div>
+                    <div class="gradient-preview" id="gradientPreview"></div>
+                    <button id="applyGradientButton" class="w-full px-4 py-3 bg-gradient-to-r from-purple-500 to-indigo-600 text-white font-semibold rounded-lg shadow-md hover:from-purple-600 hover:to-indigo-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-opacity-50 transition-colors border-gradient">
+                        Apply Gradient
+                    </button>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-800 mt-8 mb-4">Bubble Settings</h3>
+                <div class="space-y-4">
+                    <div>
+                        <label for="bubbleSpeed" class="block text-gray-700 mb-2">Bubble Speed (seconds):</label>
+                        <input type="range" id="bubbleSpeed" min="1" max="20" value="5" class="w-full px-4 py-2 input-gradient rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <span id="bubbleSpeedValue" class="text-gray-700">5 seconds</span>
+                    </div>
+                    <div>
+                        <label for="bubbleCount" class="block text-gray-700 mb-2">Number of Bubbles:</label>
+                        <input type="range" id="bubbleCount" min="1" max="100" value="45" class="w-full px-4 py-2 input-gradient rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <span id="bubbleCountValue" class="text-gray-700">45 bubbles</span>
+                    </div>
+                    <div>
+                        <label for="bubbleColor" class="block text-gray-700 mb-2">Bubble Color:</label>
+                        <input type="color" id="bubbleColor" class="w-full px-4 py-2 input-gradient rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+                    <div class="flex space-x-4">
+                        <button id="removeBubblesButton" class="flex-1 px-4 py-3 bg-gradient-to-r from-red-500 to-orange-600 text-white font-semibold rounded-lg shadow-md hover:from-red-600 hover:to-orange-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50 transition-colors border-gradient">
+                            Remove Bubbles
+                        </button>
+                        <button id="addBubblesButton" class="flex-1 px-4 py-3 bg-gradient-to-r from-blue-500 to-cyan-600 text-white font-semibold rounded-lg shadow-md hover:from-blue-600 hover:to-cyan-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition-colors border-gradient">
+                            Add Bubbles
+                        </button>
+                    </div>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-800 mt-8 mb-4">Theme Importer/Exporter</h3>
+                <div class="space-y-4">
+                    <button id="exportThemeButton" class="w-full px-4 py-3 bg-gradient-to-r from-green-500 to-teal-600 text-white font-semibold rounded-lg shadow-md hover:from-green-600 hover:to-teal-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50 transition-colors border-gradient">
+                        Export Theme Settings
+                    </button>
+                    <div class="mt-6">
+                        <label for="importThemeFile" class="block text-gray-700 mb-2">Import Theme Settings:</label>
+                        <input type="file" id="importThemeFile" accept=".json" class="w-full px-4 py-2 input-gradient rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <button id="importThemeButton" class="w-full mt-2 px-4 py-3 bg-gradient-to-r from-blue-500 to-cyan-600 text-white font-semibold rounded-lg shadow-md hover:from-blue-600 hover:to-cyan-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition-colors border-gradient">
+                            Load Theme Settings
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="cloakPage" class="page-transition hidden">
+            <div class="flex justify-between items-center mb-6">
+                <button id="backFromCloakButton" class="p-2 rounded-full bg-gray-200 text-gray-800 hover:bg-gray-300 transition-colors text-sm font-medium border-gradient">Back</button>
+                <h2 class="text-2xl font-bold text-gray-800">Cloak Settings</h2>
+                <div></div> <!-- Spacer to align button to the left -->
+            </div>
+            <div class="text-left">
+                <div class="space-y-4">
+                    <div>
+                        <label for="cloakTitleInput" class="block text-gray-700 mb-2">Website Title:</label>
+                        <input type="text" id="cloakTitleInput" placeholder="Enter new title" class="w-full px-4 py-2 input-gradient rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+                    <div>
+                        <label for="cloakFaviconInput" class="block text-gray-700 mb-2">Favicon URL:</label>
+                        <input type="text" id="cloakFaviconInput" placeholder="Enter new favicon URL" class="w-full px-4 py-2 input-gradient rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+                    <div>
+                        <label for="videoTabTitleInput" class="block text-gray-700 mb-2">Video Tab Title:</label>
+                        <input type="text" id="videoTabTitleInput" placeholder="Enter new title for video tab" class="w-full px-4 py-2 input-gradient rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+                    <button id="saveCloakButton" class="w-full px-4 py-3 bg-gradient-to-r from-green-500 to-teal-600 text-white font-semibold rounded-lg shadow-md hover:from-green-600 hover:to-teal-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50 transition-colors border-gradient">
+                        Save Cloak Settings
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="cursorSettingsPage" class="page-transition hidden">
+            <div class="flex justify-between items-center mb-6">
+                <button id="backFromCursorSettingsButton" class="p-2 rounded-full bg-gray-200 text-gray-800 hover:bg-gray-300 transition-colors text-sm font-medium border-gradient">Back</button>
+                <h2 class="text-2xl font-bold text-gray-800">Cursor Settings</h2>
+                <div></div> <!-- Spacer to align button to the left -->
+            </div>
+            <div class="text-left">
+                <div class="space-y-4">
+                    <!-- NEW: Enable Cursor Trail Toggle -->
+                    <div class="flex items-center mb-4">
+                        <input type="checkbox" id="enableCursorTrailCheckbox" class="h-5 w-5 rounded text-blue-600 focus:ring-2 focus:ring-blue-500">
+                        <label for="enableCursorTrailCheckbox" class="ml-2 text-gray-700 select-none">Enable Cursor Trail</label>
+                    </div>
+                    <!-- END NEW: Enable Cursor Trail Toggle -->
+                    <div>
+                        <label for="cursorSize" class="block text-gray-700 mb-2">Cursor Size:</label>
+                        <input type="range" id="cursorSize" min="4" max="20" value="12" class="w-full px-4 py-2 input-gradient rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <span id="cursorSizeValue" class="text-gray-700">12px</span>
+                    </div>
+                    <div>
+                        <label for="trailLength" class="block text-gray-700 mb-2">Trail Length:</label>
+                        <input type="range" id="trailLength" min="5" max="30" value="15" class="w-full px-4 py-2 input-gradient rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <span id="trailLengthValue" class="text-gray-700">15 particles</span>
+                    </div>
+                    <div>
+                        <label for="trailSpacing" class="block text-gray-700 mb-2">Trail Spacing:</label>
+                        <input type="range" id="trailSpacing" min="1" max="10" value="3" class="w-full px-4 py-2 input-gradient rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <span id="trailSpacingValue" class="text-gray-700">3px</span>
+                    </div>
+                    <div>
+                        <label for="cursorColor" class="block text-gray-700 mb-2">Cursor Color:</label>
+                        <input type="color" id="cursorColor" class="w-full px-4 py-2 input-gradient rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+                    <div>
+                        <label for="trailColor" class="block text-gray-700 mb-2">Trail Color:</label>
+                        <input type="color" id="trailColor" class="w-full px-4 py-2 input-gradient rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+                    <div>
+                        <label for="trailOpacity" class="block text-gray-700 mb-2">Trail Opacity:</label>
+                        <input type="range" id="trailOpacity" min="0.1" max="1" step="0.1" value="0.7" class="w-full px-4 py-2 input-gradient rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <span id="trailOpacityValue" class="text-gray-700">0.7</span>
+                    </div>
+                    <div class="cursor-preview">
+                        <div class="cursor-dot" id="previewCursor"></div>
+                        <div class="cursor-trail" style="left: 20px; top: 20px;"></div>
+                        <div class="cursor-trail" style="left: 30px; top: 30px;"></div>
+                        <div class="cursor-trail" style="left: 40px; top: 40px;"></div>
+                    </div>
+                    <button id="saveCursorSettingsButton" class="w-full px-4 py-3 bg-gradient-to-r from-green-500 to-teal-600 text-white font-semibold rounded-lg shadow-md hover:from-green-600 hover:to-teal-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50 transition-colors border-gradient">
+                        Save Cursor Settings
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="helpPage" class="page-transition hidden">
+            <div class="flex items-center mb-6">
+                <button id="backFromHelpButton" class="p-2 rounded-full bg-gray-200 text-gray-800 hover:bg-gray-300 transition-colors text-sm font-medium border-gradient">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                    </svg>
+                </button>
+                <h1 class="text-3xl font-bold text-gray-800 ml-4">Help</h1>
+            </div>
+            <p class="text-gray-600 text-left mb-4">
+                Welcome to Lunar Launcher! This tool allows you to easily open YouTube videos and playlists in a new tab. This can be useful for focusing on the video content without distractions.
+            </p>
+            <p class="text-gray-600 text-left mb-4">
+                Simply paste a YouTube video URL, video ID, or playlist URL into the text box on the main page. The launcher will automatically detect the video and playlist IDs from the link.
+            </p>
+            <p class="text-gray-600 text-left">
+                You can also customize the appearance of the launcher and the video tabs in the Settings menu. This includes changing the title and favicon to make it look like a different website.
+            </p>
+        </div>
+        <div id="updateLogMainPage" class="page-transition hidden">
+            <div class="flex items-center mb-6">
+                <button id="backFromUpdateLogMainButton" class="p-2 rounded-full bg-gray-200 text-gray-800 hover:bg-gray-300 transition-colors text-sm font-medium border-gradient">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                    </svg>
+                </button>
+                <h1 class="text-3xl font-bold text-gray-800 ml-4">Update Log</h1>
+            </div>
+            <div class="text-left space-y-4">
+                    <button class="update-log-version-button w-full text-left p-4 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors border-gradient" data-target="v26Page">
+                    <h3 class="text-xl font-semibold text-gray-800">V2.6 - October 1, 2025</h3>
+                </button>
+                <button class="update-log-version-button w-full text-left p-4 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors border-gradient" data-target="v25Page">
+                    <h3 class="text-xl font-semibold text-gray-800">V2.5 - September 27, 2025</h3>
+                </button>
+                <button class="update-log-version-button w-full text-left p-4 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors border-gradient" data-target="v24Page">
+                    <h3 class="text-xl font-semibold text-gray-800">V2.4 - September 25, 2025</h3>
+                </button>
+                <button class="update-log-version-button w-full text-left p-4 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors border-gradient" data-target="v23Page">
+                    <h3 class="text-xl font-semibold text-gray-800">V2.3 - September 14, 2025</h3>
+                </button>
+                <button class="update-log-version-button w-full text-left p-4 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors border-gradient" data-target="v22Page">
+                    <h3 class="text-xl font-semibold text-gray-800">V2.2 - September 14, 2025</h3>
+                </button>
+                <button class="update-log-version-button w-full text-left p-4 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors border-gradient" data-target="v21Page">
+                    <h3 class="text-xl font-semibold text-gray-800">V2.1 - September 13, 2025</h3>
+                </button>
+                <button class="update-log-version-button w-full text-left p-4 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors border-gradient" data-target="v20Page">
+                    <h3 class="text-xl font-semibold text-gray-800">V2.0 - September 10, 2025</h3>
+                </button>
+            </div>
+        </div>
+          <div id="v26Page" class="page-transition hidden">
+            <div class="flex items-center mb-6">
+                <button id="backFromV26Button" class="p-2 rounded-full bg-gray-200 text-gray-800 hover:bg-gray-300 transition-colors text-sm font-medium border-gradient">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                    </svg>
+                </button>
+                <h1 class="text-3xl font-bold text-gray-800 ml-4">Update V2.6</h1>
+            </div>
+            <div class="text-left p-4 bg-gray-100 rounded-lg border-gradient">
+                <h3 class="text-xl font-semibold text-gray-800">V2.6 - October 1, 2025</h3>
+                <ul class="list-disc list-inside mt-2 text-gray-600">
+                    <li><strong>Performance Button</strong> Fixed the CPU eating mass in testing.</li>
+                    <li><strong>Theme Exporter & Importer</strong> Fixed the CPU eating mass in testing.</li>
+                </ul>
+            </div>
+        </div>
+        <div id="v25Page" class="page-transition hidden">
+            <div class="flex items-center mb-6">
+                <button id="backFromV25Button" class="p-2 rounded-full bg-gray-200 text-gray-800 hover:bg-gray-300 transition-colors text-sm font-medium border-gradient">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                    </svg>
+                </button>
+                <h1 class="text-3xl font-bold text-gray-800 ml-4">Update V2.5</h1>
+            </div>
+            <div class="text-left p-4 bg-gray-100 rounded-lg border-gradient">
+                <h3 class="text-xl font-semibold text-gray-800">V2.5 - September 27, 2025</h3>
+                <ul class="list-disc list-inside mt-2 text-gray-600">
+                    <li><strong>Fixed Cloak button.</strong> Fixed the Cloak button on the home page.</li>
+                    <li><strong>Update Log:</strong> Added V2.5 update log.</li>
+                </ul>
+            </div>
+        </div>
+        <div id="v24Page" class="page-transition hidden">
+            <div class="flex items-center mb-6">
+                <button id="backFromV24Button" class="p-2 rounded-full bg-gray-200 text-gray-800 hover:bg-gray-300 transition-colors text-sm font-medium border-gradient">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                    </svg>
+                </button>
+                <h1 class="text-3xl font-bold text-gray-800 ml-4">Update V2.4</h1>
+            </div>
+            <div class="text-left p-4 bg-gray-100 rounded-lg border-gradient">
+                <h3 class="text-xl font-semibold text-gray-800">V2.4 - September 25, 2025</h3>
+                <ul class="list-disc list-inside mt-2 text-gray-600">
+                    <li><strong>Incognito Mode:</strong> Added an incognito mode to prevent history from being saved.</li>
+                    <li><strong>Custom Gradients:</strong> Added the ability to customize the gradient theme.</li>
+                    <li><strong>Minor Bug Fixes:</strong> fixed some minor bugs.</li>
+                </ul>
+            </div>
+        </div>
+        <div id="v23Page" class="page-transition hidden">
+            <div class="flex items-center mb-6">
+                <button id="backFromV23Button" class="p-2 rounded-full bg-gray-200 text-gray-800 hover:bg-gray-300 transition-colors text-sm font-medium border-gradient">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                    </svg>
+                </button>
+                <h1 class="text-3xl font-bold text-gray-800 ml-4">Update V2.3</h1>
+            </div>
+            <div class="text-left p-4 bg-gray-100 rounded-lg border-gradient">
+                <h3 class="text-xl font-semibold text-gray-800">V2.3 - September 14, 2025</h3>
+                <ul class="list-disc list-inside mt-2 text-gray-600">
+                    <li><strong>Rich History:</strong> The history page now shows video thumbnails and titles for a better browsing experience.</li>
+                    <li>Added <strong>Credits Page</strong> to settings.</li>
+                    <li>Fixed minor bugs.</li>
+                </ul>
+            </div>
+        </div>
+        <div id="v22Page" class="page-transition hidden">
+            <div class="flex items-center mb-6">
+                <button id="backFromV22Button" class="p-2 rounded-full bg-gray-200 text-gray-800 hover:bg-gray-300 transition-colors text-sm font-medium border-gradient">
+                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                    </svg>
+                </button>
+                <h1 class="text-3xl font-bold text-gray-800 ml-4">Update V2.2</h1>
+            </div>
+            <div class="text-left p-4 bg-gray-100 rounded-lg border-gradient">
+                <h3 class="text-xl font-semibold text-gray-800">V2.2 - September 14, 2025</h3>
+                <ul class="list-disc list-inside mt-2 text-gray-600">
+                    <li>Moved <strong>Help & Username Page</strong> to settings.</li>
+                    <li>Added <strong>Username Page.</strong></li>
+                    <li>Redesigned the <strong>Checkbox</strong>.</li>
+                    <li>Fixed major bugs.</li>
+                </ul>
+            </div>
+        </div>
+        <div id="v21Page" class="page-transition hidden">
+            <div class="flex items-center mb-6">
+                <button id="backFromV21Button" class="p-2 rounded-full bg-gray-200 text-gray-800 hover:bg-gray-300 transition-colors text-sm font-medium border-gradient">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                    </svg>
+                </button>
+                <h1 class="text-3xl font-bold text-gray-800 ml-4">Update V2.1</h1>
+            </div>
+            <div class="text-left p-4 bg-gray-100 rounded-lg border-gradient">
+                <h3 class="text-xl font-semibold text-gray-800">V2.1 - September 13, 2025</h3>
+                <ul class="list-disc list-inside mt-2 text-gray-600">
+                    <li><strong>Help Page</strong> Added the help page.</li>
+                    <li><strong>Fixed Bold Text</strong> Lunar Team officially fixed Bold Text.</li>
+                    <li><strong>Transitions</strong> Added Smooth keyframe transitions.</li>
+                    <li>Minor bug fixes and performance improvements.</li>
+                </ul>
+            </div>
+        </div>
+        <div id="v20Page" class="page-transition hidden">
+            <div class="flex items-center mb-6">
+                <button id="backFromV20Button" class="p-2 rounded-full bg-gray-200 text-gray-800 hover:bg-gray-300 transition-colors text-sm font-medium border-gradient">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                    </svg>
+                </button>
+                <h1 class="text-3xl font-bold text-gray-800 ml-4">Update V2.0</h1>
+            </div>
+            <div class="text-left p-4 bg-gray-100 rounded-lg border-gradient">
+                <h3 class="text-xl font-semibold text-gray-800">V2.0 - September 10, 2025</h3>
+                <ul class="list-disc list-inside mt-2 text-gray-600">
+                    <li><strong>Playlist Looping:</strong> Lunar has officially added Playlist looping.</li>
+                    <li><strong>Video Looping:</strong> Lunar has officially added Video Looping allowing users to loop videos.</li>
+                </ul>
+            </div>
+        </div>
+        <div id="profilePage" class="page-transition hidden">
+            <div class="flex justify-between items-center mb-6">
+                <button id="backFromProfileButton" class="p-2 rounded-full bg-gray-200 text-gray-800 hover:bg-gray-300 transition-colors text-sm font-medium border-gradient">Back</button>
+                <h2 class="text-2xl font-bold text-gray-800">Profile</h2>
+                <div></div> </div>
+            <div class="text-left">
+                <h3 class="text-xl font-semibold text-gray-800 mb-4">Username</h3>
+                <div class="space-y-4">
+                    <div>
+                        <label for="usernameInput" class="block text-gray-700 mb-2">Enter your username:</label>
+                        <input type="text" id="usernameInput" placeholder="e.g., JohnDoe" class="w-full px-4 py-2 input-gradient rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+                    <button id="saveUsernameButton" class="w-full px-4 py-3 bg-gradient-to-r from-green-500 to-teal-600 text-white font-semibold rounded-lg shadow-md hover:from-green-600 hover:to-teal-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50 transition-colors border-gradient">
+                        Save Username
+                    </button>
+                    <div id="currentUsernameDisplay" class="mt-4 text-gray-700"></div>
+                </div>
+            </div>
+        </div>
+        <div id="creditsPage" class="page-transition hidden">
+            <div class="flex items-center mb-6">
+                <button id="backFromCreditsButton" class="p-2 rounded-full bg-gray-200 text-gray-800 hover:bg-gray-300 transition-colors text-sm font-medium border-gradient">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                    </svg>
+                </button>
+                <h1 class="text-3xl font-bold text-gray-800 ml-4">Credits</h1>
+            </div>
+            <div class="text-left space-y-4">
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800">Development Team</h3>
+                    <p class="text-gray-600 mt-2">
+                        Lunar Launcher was designed and developed by google gemini, me livid, & qwen ai.
+                    </p>
+                </div>
+            </div>
+        <div id="messageBox" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+            <div class="bg-white p-6 rounded-lg shadow-xl text-center max-w-sm mx-4 border-gradient">
+                <p id="messageText" class="text-gray-800 mb-4"></p>
+                <button id="closeMessage" class="bg-gradient-to-r from-red-500 to-orange-600 text-white font-bold py-2 px-4 rounded-lg hover:from-red-600 hover:to-orange-700 transition duration-200 border-gradient">Close</button>
+            </div>
+        </div>
+        <div id="welcomeModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+            <div class="bg-white p-8 rounded-xl shadow-xl text-center w-full max-w-xl mx-4 border-gradient">
+                <div class="border-b border-gray-200 mb-6">
+                    <nav class="-mb-px flex justify-center space-x-8" aria-label="Tabs">
+                        <button class="tab-button active py-4 px-1 text-center font-medium text-sm text-gray-500 hover:text-gray-700 focus:outline-none border-gradient" data-tab="welcome">
+                            Welcome
+                        </button>
+                        <button class="tab-button py-4 px-1 text-center font-medium text-sm text-gray-500 hover:text-gray-700 focus:outline-none border-gradient" data-tab="whats-new">
+                            What's New
+                        </button>
+                        <button class="tab-button py-4 px-1 text-center font-medium text-sm text-gray-500 hover:text-gray-700 focus:outline-none border-gradient" data-tab="about">
+                            About
+                        </button>
+                    </nav>
+                </div>
+                <div id="welcome-tab" class="tab-content active text-left">
+                    <h2 class="text-2xl font-bold mb-4 text-gray-800">Welcome to Lunar Launcher!</h2>
+                    <p class="text-gray-600 mb-4">
+                        This tool allows you to easily open YouTube videos and playlists in a new tab, helping you to focus on the content without distractions.
+                    </p>
+                    <p class="text-gray-600">
+                        Use the buttons and inputs to get started. You can also customize your experience in the Settings menu.
+                    </p>
+                </div>
+                <div id="whats-new-tab" class="tab-content text-left">
+                    <h2 class="text-2xl font-bold mb-4 text-gray-800">What's New in Version 2.5</h2>
+                    <ul class="list-disc list-inside space-y-2 text-gray-600">
+                        <li><strong>Fixed Cloak button.</strong> Fixed the Cloak button on the home page.</li>
+                        <li><strong>Update Log:</strong> Added V2.5 update log.</li>
+                    </ul>
+                </div>
+                <div id="about-tab" class="tab-content text-left">
+                    <h2 class="text-2xl font-bold mb-4 text-gray-800">About Lunar Launcher</h2>
+                    <p class="text-gray-600 mb-4">
+                        Lunar Launcher was created to provide a simple, clean, and distraction-free way to watch YouTube content. It's a quick and easy solution for launching videos and playlists without the clutter of the standard YouTube interface with no ads!!.
+                    </p>
+                    <p class="text-gray-600">
+                        We hope you enjoy using it! -livid
+                    </p>
+                </div>
+                <div class="mt-8">
+                    <button id="closeWelcomeButton" class="bg-gradient-to-r from-blue-500 to-purple-600 text-white font-bold py-2 px-4 rounded-lg hover:from-blue-600 hover:to-purple-700 transition duration-200 border-gradient">
+                        Get Started
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Custom Cursor Elements -->
+    <div class="cursor-dot" id="cursorDot"></div>
+    <div class="cursor-trail" id="cursorTrail0"></div>
+    <div class="cursor-trail" id="cursorTrail1"></div>
+    <div class="cursor-trail" id="cursorTrail2"></div>
+    <div class="cursor-trail" id="cursorTrail3"></div>
+    <div class="cursor-trail" id="cursorTrail4"></div>
+    <div class="cursor-trail" id="cursorTrail5"></div>
+    <div class="cursor-trail" id="cursorTrail6"></div>
+    <div class="cursor-trail" id="cursorTrail7"></div>
+    <div class="cursor-trail" id="cursorTrail8"></div>
+    <div class="cursor-trail" id="cursorTrail9"></div>
+    <div class="cursor-trail" id="cursorTrail10"></div>
+    <div class="cursor-trail" id="cursorTrail11"></div>
+    <div class="cursor-trail" id="cursorTrail12"></div>
+    <div class="cursor-trail" id="cursorTrail13"></div>
+    <div class="cursor-trail" id="cursorTrail14"></div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const currentVersion = '2.6'; // Updated current version
+            // --- DOM Element Selection ---
+            const videoInput = document.getElementById('videoInput');
+            const goButton = document.getElementById('goButton');
+            const incognitoToggleButton = document.getElementById('incognitoToggleButton');
+            const incognitoBadge = document.getElementById('incognitoBadge');
+            const loopCheckbox = document.getElementById('loopCheckbox');
+            const messageBox = document.getElementById('messageBox');
+            const messageText = document.getElementById('messageText');
+            const closeMessage = document.getElementById('closeMessage');
+            const themeToggle = document.getElementById('themeToggle');
+            const sunIcon = document.getElementById('sunIcon');
+            const moonIcon = document.getElementById('moonIcon');
+            const bubbleContainer = document.getElementById('bubble-background');
+            const allPages = document.querySelectorAll('.page-transition');
+            const mainPage = document.getElementById('mainPage');
+            const settingsPage = document.getElementById('settingsPage');
+            const cloakPage = document.getElementById('cloakPage');
+            const cursorSettingsPage = document.getElementById('cursorSettingsPage');
+            const helpPage = document.getElementById('helpPage');
+            const updateLogMainPage = document.getElementById('updateLogMainPage');
+            const v26Page = document.getElementById('v26Page'); // Added v26 page
+            const v25Page = document.getElementById('v25Page'); // Added v25 page
+            const v24Page = document.getElementById('v24Page'); // Added v24 page
+            const v23Page = document.getElementById('v23Page');
+            const v22Page = document.getElementById('v22Page');
+            const v21Page = document.getElementById('v21Page');
+            const v20Page = document.getElementById('v20Page');
+            const profilePage = document.getElementById('profilePage');
+            const creditsPage = document.getElementById('creditsPage');
+            const archivePage = document.getElementById('archivePage');
+            // Buttons
+            const settingsButton = document.getElementById('settingsButton');
+            const updateLogButton = document.getElementById('updateLogButton');
+            const creditsButton = document.getElementById('creditsButton');
+            const profileButton = document.getElementById('profileButton');
+            const helpButton = document.getElementById('helpButton');
+            const archiveButton = document.getElementById('archiveButton');
+            const cloakSettingsButton = document.getElementById('cloakSettingsButton');
+            const cursorSettingsButton = document.getElementById('cursorSettingsButton');
+            const backFromSettingsButton = document.getElementById('backFromSettingsButton');
+            const backFromCloakButton = document.getElementById('backFromCloakButton');
+            const backFromCursorSettingsButton = document.getElementById('backFromCursorSettingsButton');
+            const backFromHelpButton = document.getElementById('backFromHelpButton');
+            const backFromUpdateLogMainButton = document.getElementById('backFromUpdateLogMainButton');
+            const backFromV26Button = document.getElementById('backFromV26Button'); // Added v26 button 
+            const backFromV25Button = document.getElementById('backFromV25Button'); // Added v25 button
+            const backFromV24Button = document.getElementById('backFromV24Button'); // Added v24 button
+            const backFromV23Button = document.getElementById('backFromV23Button');
+            const backFromV22Button = document.getElementById('backFromV22Button');
+            const backFromV21Button = document.getElementById('backFromV21Button');
+            const backFromV20Button = document.getElementById('backFromV20Button');
+            const backFromProfileButton = document.getElementById('backFromProfileButton');
+            const backFromCreditsButton = document.getElementById('backFromCreditsButton');
+            const backFromArchiveButton = document.getElementById('backFromArchiveButton');
+            // Performance Mode Elements
+            const performanceModeToggle = document.getElementById('performanceModeToggle');
+            const performanceModeCheckbox = document.getElementById('performanceModeCheckbox');
+            // Cursor Settings Elements (including new trail toggle)
+            const enableCursorTrailCheckbox = document.getElementById('enableCursorTrailCheckbox');
+            // Cloak Settings
+            const cloakTitleInput = document.getElementById('cloakTitleInput');
+            const cloakFaviconInput = document.getElementById('cloakFaviconInput');
+            const videoTabTitleInput = document.getElementById('videoTabTitleInput');
+            const saveCloakButton = document.getElementById('saveCloakButton');
+            // Gradient Settings
+            const gradientStartColor = document.getElementById('gradientStartColor');
+            const gradientEndColor = document.getElementById('gradientEndColor');
+            const gradientDirection = document.getElementById('gradientDirection');
+            const gradientPreview = document.getElementById('gradientPreview');
+            const applyGradientButton = document.getElementById('applyGradientButton');
+            // Bubble Settings
+            const bubbleSpeed = document.getElementById('bubbleSpeed');
+            const bubbleSpeedValue = document.getElementById('bubbleSpeedValue');
+            const bubbleCount = document.getElementById('bubbleCount');
+            const bubbleCountValue = document.getElementById('bubbleCountValue');
+            const bubbleColor = document.getElementById('bubbleColor');
+            const removeBubblesButton = document.getElementById('removeBubblesButton');
+            const addBubblesButton = document.getElementById('addBubblesButton');
+            // Profile
+            const usernameInput = document.getElementById('usernameInput');
+            const saveUsernameButton = document.getElementById('saveUsernameButton');
+            const currentUsernameDisplay = document.getElementById('currentUsernameDisplay');
+            const greetingText = document.getElementById('greetingText');
+            // Welcome Modal
+            const welcomeModal = document.getElementById('welcomeModal');
+            const closeWelcomeButton = document.getElementById('closeWelcomeButton');
+            const tabButtons = document.querySelectorAll('.tab-button');
+            const tabContents = document.querySelectorAll('.tab-content');
+            // Archive
+            const archiveList = document.getElementById('archiveList');
+            const clearHistoryBtn = document.getElementById('clearHistoryBtn');
+            const historyStorageKey = 'LunarLauncherHistory'; // Changed history key
+            let isIncognitoMode = false;
+            let bubbleInterval;
+            let currentBubbleCount = 45;
+            // Custom Cursor Elements
+            const cursorDot = document.getElementById('cursorDot');
+            const cursorTrails = [];
+            for (let i = 0; i < 15; i++) {
+                cursorTrails.push(document.getElementById(`cursorTrail${i}`));
+            }
+            // Custom Cursor Settings Elements
+            const cursorSize = document.getElementById('cursorSize');
+            const cursorSizeValue = document.getElementById('cursorSizeValue');
+            const trailLength = document.getElementById('trailLength');
+            const trailLengthValue = document.getElementById('trailLengthValue');
+            const trailSpacing = document.getElementById('trailSpacing');
+            const trailSpacingValue = document.getElementById('trailSpacingValue');
+            const cursorColor = document.getElementById('cursorColor');
+            const trailColor = document.getElementById('trailColor');
+            const trailOpacity = document.getElementById('trailOpacity');
+            const trailOpacityValue = document.getElementById('trailOpacityValue');
+            const saveCursorSettingsButton = document.getElementById('saveCursorSettingsButton');
+            const previewCursor = document.getElementById('previewCursor');
+            // Theme Import/Export
+            const exportThemeButton = document.getElementById('exportThemeButton');
+            const importThemeFile = document.getElementById('importThemeFile');
+            const importThemeButton = document.getElementById('importThemeButton');
+            // Cursor position tracking
+            let mouseX = 0;
+            let mouseY = 0;
+            let trailPositions = [];
+            // Initialize trail positions
+            for (let i = 0; i < cursorTrails.length; i++) {
+                trailPositions.push({ x: 0, y: 0 });
+            }
 
-<nav class="hidden md:flex space-x-8">
-<a href="#home" class="text-gray-600 hover:text-primary font-medium">Home</a>
-<a href="#services" class="text-gray-600 hover:text-primary font-medium">Services</a>
-<a href="#about" class="text-gray-600 hover:text-primary font-medium">About Us</a>
-<a href="#resources" class="text-gray-600 hover:text-primary font-medium">Resources</a>
-<a href="#contact" class="text-gray-600 hover:text-primary font-medium">Contact</a>
-</nav>
+            // --- Performance Mode Logic ---
+            let performanceMode = false; // Flag for performance mode state
 
-<button class="md:hidden text-gray-600">
-<i class="fas fa-bars text-2xl"></i>
-</button>
-</div>
-</div>
-</header>
+            function applyPerformanceMode(enabled) {
+                performanceMode = enabled;
+                if (enabled) {
+                    // Disable bubbles
+                    if (bubbleInterval) {
+                        clearInterval(bubbleInterval);
+                        bubbleInterval = null;
+                    }
+                    // Hide bubbles container
+                    document.body.classList.add('performance-mode');
+                    // Hide cursor trails (overrides individual setting)
+                    cursorTrails.forEach(trail => {
+                        trail.style.opacity = '0';
+                    });
+                    // Update UI elements
+                    performanceModeToggle.classList.add('performance-mode-active');
+                    performanceModeCheckbox.checked = true;
+                } else {
+                    // Re-enable bubbles if not already running
+                    if (!bubbleInterval) {
+                        generateBubbles(currentBubbleCount);
+                    }
+                    // Show bubbles container
+                    document.body.classList.remove('performance-mode');
+                    // Show cursor trails based on individual setting
+                    updateCursorTrailVisibility();
+                    // Update UI elements
+                    performanceModeToggle.classList.remove('performance-mode-active');
+                    performanceModeCheckbox.checked = false;
+                }
+                localStorage.setItem('performanceMode', enabled ? 'true' : 'false');
+            }
 
-<!-- Hero Section -->
-<section id="home" class="hero-bg text-white">
-<div class="container mx-auto px-4 py-24 md:py-32">
-<div class="max-w-2xl">
-<h1 class="text-4xl md:text-5xl font-bold mb-6">Compassionate Support for Individuals with Autism</h1>
-<p class="text-xl mb-8 opacity-90">Providing specialized care, resources, and community support for individuals with autism spectrum disorder and their families.</p>
-<div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-<a href="#services" class="bg-secondary hover:bg-teal-700 text-white font-bold py-3 px-8 rounded-full text-center transition duration-300">
-Our Services
-</a>
-<a href="#contact" class="bg-transparent border-2 border-white hover:bg-white hover:text-dark font-bold py-3 px-8 rounded-full text-center transition duration-300">
-Get in Touch
-</a>
-</div>
-</div>
-</div>
-</section>
+            function togglePerformanceMode() {
+                applyPerformanceMode(!performanceMode);
+            }
 
-<!-- Services Section -->
-<section id="services" class="py-20 calm-bg">
-<div class="container mx-auto px-4">
-<div class="text-center mb-16">
-<h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">Our Specialized Services</h2>
-<p class="text-gray-600 max-w-2xl mx-auto">Evidence-based programs designed to support individuals with autism at every stage of life</p>
-</div>
+            // --- Custom Cursor Implementation ---
+            function initCustomCursor() {
+                // Load cursor settings from localStorage
+                const savedCursorSize = localStorage.getItem('cursorSize');
+                const savedTrailLength = localStorage.getItem('trailLength');
+                const savedTrailSpacing = localStorage.getItem('trailSpacing');
+                const savedCursorColor = localStorage.getItem('cursorColor');
+                const savedTrailColor = localStorage.getItem('trailColor');
+                const savedTrailOpacity = localStorage.getItem('trailOpacity');
+                const savedCursorTrailEnabled = localStorage.getItem('cursorTrailEnabled'); // NEW: Load trail enabled state
+                if (savedCursorSize) {
+                    cursorSize.value = savedCursorSize;
+                    cursorSizeValue.textContent = `${savedCursorSize}px`;
+                    cursorDot.style.width = `${savedCursorSize}px`;
+                    cursorDot.style.height = `${savedCursorSize}px`;
+                }
+                if (savedTrailLength) {
+                    trailLength.value = savedTrailLength;
+                    trailLengthValue.textContent = `${savedTrailLength} particles`;
+                }
+                if (savedTrailSpacing) {
+                    trailSpacing.value = savedTrailSpacing;
+                    trailSpacingValue.textContent = `${savedTrailSpacing}px`;
+                }
+                if (savedCursorColor) {
+                    cursorColor.value = savedCursorColor;
+                    cursorDot.style.backgroundColor = savedCursorColor;
+                }
+                if (savedTrailColor) {
+                    trailColor.value = savedTrailColor;
+                    cursorTrails.forEach(trail => {
+                        trail.style.backgroundColor = savedTrailColor;
+                    });
+                }
+                if (savedTrailOpacity) {
+                    trailOpacity.value = savedTrailOpacity;
+                    trailOpacityValue.textContent = savedTrailOpacity;
+                    // Apply initial opacity, but respect performance mode and individual setting
+                    updateCursorTrailVisibility();
+                }
+                // NEW: Apply saved cursor trail enabled state
+                if (savedCursorTrailEnabled !== null) {
+                    enableCursorTrailCheckbox.checked = savedCursorTrailEnabled === 'true';
+                } else {
+                    // Default to true if not saved
+                    enableCursorTrailCheckbox.checked = true;
+                }
+                updateCursorTrailVisibility(); // Apply initial state
 
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-<!-- Service 1 -->
-<div class="service-card bg-white p-8 rounded-xl shadow-lg border border-gray-100 transition duration-300 autism-blue">
-<div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mb-6">
-<i class="fas fa-child text-primary text-2xl"></i>
-</div>
-<h3 class="text-xl font-bold mb-3">Early Intervention</h3>
-<p class="text-gray-600 mb-4">Specialized programs for children ages 18 months to 5 years focusing on communication, social skills, and developmental milestones.</p>
-</div>
+                // --- Add these variables for trail fade logic ---
+                let hideTrailTimer = null;
+                const trailHideDelay = 200; // Time in milliseconds after which trail disappears if mouse stops moving
+                // --- End variables ---
+                // Mouse move event to update cursor position and reset timer
+                document.addEventListener('mousemove', (e) => {
+                    mouseX = e.clientX;
+                    mouseY = e.clientY;
+                    // --- Show the trail elements when mouse moves (unless performance mode is on or trail is disabled) ---
+                    if (!performanceMode && enableCursorTrailCheckbox.checked) { // Check both performance mode and individual setting
+                        cursorTrails.forEach(trail => {
+                            trail.style.opacity = localStorage.getItem('trailOpacity') || '0.7'; // Use saved opacity or default
+                        });
+                    }
+                    // --- End show trail ---
+                    // Update main cursor position
+                    cursorDot.style.left = `${mouseX}px`;
+                    cursorDot.style.top = `${mouseY}px`;
+                    // Update trail positions
+                    for (let i = cursorTrails.length - 1; i > 0; i--) {
+                        const prevPos = trailPositions[i - 1];
+                        if (prevPos.x !== 0 && prevPos.y !== 0) {
+                            trailPositions[i] = { x: prevPos.x, y: prevPos.y };
+                            cursorTrails[i].style.left = `${prevPos.x}px`;
+                            cursorTrails[i].style.top = `${prevPos.y}px`;
+                        }
+                    }
+                    // Update first trail position
+                    if (trailPositions[0].x !== mouseX || trailPositions[0].y !== mouseY) {
+                        trailPositions[0] = { x: mouseX, y: mouseY };
+                        cursorTrails[0].style.left = `${mouseX}px`;
+                        cursorTrails[0].style.top = `${mouseY}px`;
+                    }
+                    // --- Reset the timer to hide the trail ---
+                    clearTimeout(hideTrailTimer);
+                    hideTrailTimer = setTimeout(() => {
+                        if (!performanceMode && enableCursorTrailCheckbox.checked) { // Only hide trails if performance mode is off AND trail is enabled
+                            cursorTrails.forEach(trail => {
+                                trail.style.opacity = '0'; // Set opacity to 0 to hide
+                            });
+                        }
+                    }, trailHideDelay);
+                    // --- End reset timer ---
+                });
+                // Mouse click effect
+                document.addEventListener('mousedown', () => {
+                    cursorDot.classList.add('active');
+                });
+                document.addEventListener('mouseup', () => {
+                    cursorDot.classList.remove('active');
+                });
+                // Hide default cursor
+                document.body.style.cursor = 'none';
+                // --- Enforce cursor hiding CSS ---
+                // Create a style element to inject the CSS rule
+                const enforceCursorStyle = document.createElement('style');
+                enforceCursorStyle.id = 'enforce-cursor-style'; // Give it an ID for potential future reference
+                enforceCursorStyle.textContent = `
+                    /* Enforce custom cursor by hiding system cursor globally */
+                    * {
+                        cursor: none !important;
+                    }
+                    /* Ensure the main container and body also hide the cursor */
+                    #main-container,
+                    #bubble-background,
+                    body,
+                    html {
+                        cursor: none !important;
+                    }
+                    /* Ensure cursor elements are on top and don't block interaction */
+                    .cursor-dot,
+                    .cursor-trail {
+                        pointer-events: none; /* Crucial: allows clicks/hoovers to pass through */
+                        z-index: 9999; /* Main dot on top */
+                    }
+                    .cursor-trail {
+                         z-index: 9998; /* Trails slightly below the main dot */
+                    }
+                `;
+                document.head.appendChild(enforceCursorStyle);
+                // --- End Enforce cursor hiding CSS ---
+            }
 
-<!-- Service 2 -->
-<div class="service-card bg-white p-8 rounded-xl shadow-lg border border-gray-100 transition duration-300 autism-blue">
-<div class="w-16 h-16 rounded-full bg-teal-100 flex items-center justify-center mb-6">
-<i class="fas fa-graduation-cap text-secondary text-2xl"></i>
-</div>
-<h3 class="text-xl font-bold mb-3">School Support</h3>
-<p class="text-gray-600 mb-4">Collaboration with educational institutions to develop IEPs, provide classroom support, and ensure academic success.</p>
-</div>
+            // NEW: Function to update cursor trail visibility based on performance mode and individual setting
+            function updateCursorTrailVisibility() {
+                if (performanceMode || !enableCursorTrailCheckbox.checked) {
+                    // Hide trails if performance mode is on OR if trail is individually disabled
+                    cursorTrails.forEach(trail => {
+                        trail.style.opacity = '0';
+                    });
+                } else {
+                    // Show trails based on saved opacity if both performance mode is off AND trail is enabled
+                    const savedOpacity = localStorage.getItem('trailOpacity') || '0.7';
+                    cursorTrails.forEach(trail => {
+                        trail.style.opacity = savedOpacity;
+                    });
+                }
+            }
 
-<!-- Service 3 -->
-<div class="service-card bg-white p-8 rounded-xl shadow-lg border border-gray-100 transition duration-300 autism-blue">
-<div class="w-16 h-16 rounded-full bg-purple-100 flex items-center justify-center mb-6">
-<i class="fas fa-users text-accent text-2xl"></i>
-</div>
-<h3 class="text-xl font-bold mb-3">Social Skills Training</h3>
-<p class="text-gray-600 mb-4">Structured programs to develop communication, relationship-building, and social interaction skills in various settings.</p>
-</div>
+            // Update cursor settings in real-time
+            cursorSize.addEventListener('input', () => {
+                const size = cursorSize.value;
+                cursorSizeValue.textContent = `${size}px`;
+                cursorDot.style.width = `${size}px`;
+                cursorDot.style.height = `${size}px`;
+            });
+            trailLength.addEventListener('input', () => {
+                trailLengthValue.textContent = `${trailLength.value} particles`;
+            });
+            trailSpacing.addEventListener('input', () => {
+                trailSpacingValue.textContent = `${trailSpacing.value}px`;
+            });
+            cursorColor.addEventListener('input', () => {
+                cursorDot.style.backgroundColor = cursorColor.value;
+            });
+            trailColor.addEventListener('input', () => {
+                cursorTrails.forEach(trail => {
+                    trail.style.backgroundColor = trailColor.value;
+                });
+            });
+            trailOpacity.addEventListener('input', () => {
+                const opacity = trailOpacity.value;
+                trailOpacityValue.textContent = opacity;
+                if (!performanceMode && enableCursorTrailCheckbox.checked) { // Only apply if performance mode is off AND trail is enabled
+                    cursorTrails.forEach(trail => {
+                        trail.style.opacity = opacity;
+                    });
+                }
+            });
+            // NEW: Event listener for the cursor trail toggle
+            enableCursorTrailCheckbox.addEventListener('change', () => {
+                localStorage.setItem('cursorTrailEnabled', enableCursorTrailCheckbox.checked ? 'true' : 'false');
+                updateCursorTrailVisibility(); // Update visibility based on new state
+            });
 
-<!-- Service 4 -->
-<div class="service-card bg-white p-8 rounded-xl shadow-lg border border-gray-100 transition duration-300 autism-blue">
-<div class="w-16 h-16 rounded-full bg-amber-100 flex items-center justify-center mb-6">
-<i class="fas fa-hands-helping text-amber-600 text-2xl"></i>
-</div>
-<h3 class="text-xl font-bold mb-3">Family Support</h3>
-<p class="text-gray-600 mb-4">Resources, training, and counseling for parents and caregivers to support their loved ones effectively.</p>
-</div>
+            // Save cursor settings
+            saveCursorSettingsButton.addEventListener('click', () => {
+                localStorage.setItem('cursorSize', cursorSize.value);
+                localStorage.setItem('trailLength', trailLength.value);
+                localStorage.setItem('trailSpacing', trailSpacing.value);
+                localStorage.setItem('cursorColor', cursorColor.value);
+                localStorage.setItem('trailColor', trailColor.value);
+                localStorage.setItem('trailOpacity', trailOpacity.value);
+                // NEW: Save cursor trail enabled state when saving settings
+                localStorage.setItem('cursorTrailEnabled', enableCursorTrailCheckbox.checked ? 'true' : 'false');
+                showMessage("Cursor settings saved!");
+            });
+            // --- Bubble Animation ---
+            function createBubble() {
+                if (performanceMode) return; // Don't create bubbles if performance mode is on
+                const bubble = document.createElement('div');
+                bubble.className = 'bubble';
+                const size = Math.random() * 40 + 10;
+                bubble.style.width = `${size}px`;
+                bubble.style.height = `${size}px`;
+                bubble.style.left = `${Math.random() * 100}%`;
+                bubble.style.animationDuration = `${bubbleSpeed.value}s`;
+                bubble.style.animationDelay = `${Math.random() * 5}s`;
+                bubble.style.backgroundColor = bubbleColor.value;
+                bubbleContainer.appendChild(bubble);
+                setTimeout(() => {
+                    bubble.remove();
+                }, 8888888);
+            }
+            function generateBubbles(count) {
+                if (performanceMode) return; // Don't generate bubbles if performance mode is on
+                for (let i = 0; i < count; i++) {
+                    createBubble();
+                }
+                clearInterval(bubbleInterval);
+                bubbleInterval = setInterval(createBubble, 500);
+            }
+            function removeBubbles() {
+                const bubbles = document.querySelectorAll('.bubble');
+                bubbles.forEach(bubble => bubble.remove());
+            }
+            // --- Update Popup Logic ---
+            function checkVersion() {
+                const lastSeenVersion = localStorage.getItem('lastSeenVersion');
+                if (lastSeenVersion !== currentVersion) {
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    tabContents.forEach(content => content.classList.remove('active'));
+                    document.querySelector('.tab-button[data-tab="whats-new"]').classList.add('active');
+                    document.getElementById('whats-new-tab').classList.add('active');
+                    welcomeModal.classList.remove('hidden');
+                }
+            }
+            // --- Page Navigation ---
+            function showPage(pageToShow) {
+                allPages.forEach(p => {
+                    if (p) {
+                        p.classList.add('hidden');
+                        p.classList.remove('active');
+                    }
+                });
+                if (pageToShow) {
+                    pageToShow.classList.remove('hidden');
+                    void pageToShow.offsetWidth;
+                    pageToShow.classList.add('active');
+                }
+            }
+            // --- Messaging ---
+            function showMessage(message, isSuccess = true) {
+                messageText.textContent = message;
+                messageBox.classList.remove('hidden');
+            }
+            // --- Theme Management ---
+            function applyTheme(theme) {
+                if (theme === 'dark') {
+                    document.body.classList.add('dark');
+                    moonIcon.classList.add('hidden');
+                    sunIcon.classList.remove('hidden');
+                } else {
+                    document.body.classList.remove('dark');
+                    moonIcon.classList.remove('hidden');
+                    sunIcon.classList.add('hidden');
+                }
+                localStorage.setItem('theme', theme);
+            }
+            themeToggle.addEventListener('click', () => applyTheme(document.body.classList.contains('dark') ? 'light' : 'dark'));
+            // --- Incognito Mode Management ---
+            function applyIncognitoMode(enabled) {
+                isIncognitoMode = enabled;
+                if (enabled) {
+                    incognitoToggleButton.classList.add('active');
+                    incognitoBadge.classList.add('show');
+                } else {
+                    incognitoToggleButton.classList.remove('active');
+                    incognitoBadge.classList.remove('show');
+                }
+                localStorage.setItem('incognitoMode', enabled ? 'true' : 'false');
+            }
+            incognitoToggleButton.addEventListener('click', () => {
+                applyIncognitoMode(!isIncognitoMode);
+            });
+            // --- Greeting and Profile ---
+            function setGreeting() {
+                const username = localStorage.getItem('username');
+                const hour = new Date().getHours();
+                let greeting = (hour < 12) ? 'Good Morning' : (hour < 18) ? 'Good Afternoon' : 'Good Evening';
+                greetingText.textContent = username ? `${greeting}, ${username}!` : `${greeting}!`;
+            }
+            function loadUsername() {
+                const savedUsername = localStorage.getItem('username');
+                usernameInput.value = savedUsername || '';
+                currentUsernameDisplay.textContent = savedUsername ? `Current Username: ${savedUsername}` : 'No username saved.';
+            }
+            saveUsernameButton.addEventListener('click', () => {
+                const username = usernameInput.value.trim();
+                if (username) {
+                    localStorage.setItem('username', username);
+                    loadUsername(); setGreeting();
+                    showMessage("Username saved!");
+                } else { showMessage("Please enter a valid username.", false); }
+            });
+            // --- Cloak Settings ---
+            function loadCloakSettings() {
+                const title = localStorage.getItem('cloakTitle') || 'Home'; // Changed default to 
+                const favicon = localStorage.getItem('cloakFavicon') || 'https://ssl.gstatic.com/classroom/favicon.png';
+                const videoTitle = localStorage.getItem('videoTabTitle') || 'Home'; // Changed default to 
+                document.title = title;
+                document.querySelector("link[rel='icon']").href = favicon;
+                cloakTitleInput.value = title;
+                cloakFaviconInput.value = favicon;
+                videoTabTitleInput.value = videoTitle;
+            }
+            saveCloakButton.addEventListener('click', () => {
+                localStorage.setItem('cloakTitle', cloakTitleInput.value.trim());
+                localStorage.setItem('cloakFavicon', cloakFaviconInput.value.trim());
+                localStorage.setItem('videoTabTitle', videoTabTitleInput.value.trim());
+                loadCloakSettings();
+                showMessage("Cloak settings saved and applied!");
+            });
+            // --- Gradient Settings ---
+            function updateGradientPreview() {
+                const start = gradientStartColor.value;
+                const end = gradientEndColor.value;
+                const direction = gradientDirection.value;
+                gradientPreview.style.background = `linear-gradient(${direction}, ${start}, ${end})`;
+            }
+            function applyGradient() {
+                const start = gradientStartColor.value;
+                const end = gradientEndColor.value;
+                const direction = gradientDirection.value;
+                // Update CSS variables
+                document.documentElement.style.setProperty('--custom-gradient-start', start);
+                document.documentElement.style.setProperty('--custom-gradient-end', end);
+                document.documentElement.style.setProperty('--custom-gradient-direction', direction);
+                // Update background gradient
+                document.body.style.background = `linear-gradient(${direction}, ${start}, ${end})`;
+                // Save to localStorage
+                localStorage.setItem('customGradient', JSON.stringify({
+                    start: start,
+                    end: end,
+                    direction: direction
+                }));
+            }
+            gradientStartColor.addEventListener('input', updateGradientPreview);
+            gradientEndColor.addEventListener('input', updateGradientPreview);
+            gradientDirection.addEventListener('change', updateGradientPreview);
+            applyGradientButton.addEventListener('click', applyGradient);
+            // --- Bubble Settings ---
+            bubbleSpeed.addEventListener('input', () => {
+                bubbleSpeedValue.textContent = `${bubbleSpeed.value} seconds`;
+                if (!performanceMode) { // Only update interval if performance mode is off
+                    clearInterval(bubbleInterval);
+                    generateBubbles(currentBubbleCount);
+                }
+            });
+            bubbleCount.addEventListener('input', () => {
+                bubbleCountValue.textContent = `${bubbleCount.value} bubbles`;
+                currentBubbleCount = parseInt(bubbleCount.value);
+                if (!performanceMode) { // Only update if performance mode is off
+                    removeBubbles();
+                    generateBubbles(currentBubbleCount);
+                }
+            });
+            bubbleColor.addEventListener('input', () => {
+                if (!performanceMode) { // Only update if performance mode is off
+                    const bubbles = document.querySelectorAll('.bubble');
+                    bubbles.forEach(bubble => {
+                        bubble.style.backgroundColor = bubbleColor.value;
+                    });
+                }
+            });
+            removeBubblesButton.addEventListener('click', () => {
+                removeBubbles();
+                if (performanceMode) { // If performance mode is on, ensure bubbles are gone
+                    removeBubbles(); // Call again just in case
+                }
+            });
+            addBubblesButton.addEventListener('click', () => {
+                if (!performanceMode) { // Only add if performance mode is off
+                    removeBubbles();
+                    generateBubbles(parseInt(bubbleCount.value));
+                }
+            });
+            // --- ARCHIVE/HISTORY FUNCTIONS ---
+            function getHistory() {
+                return JSON.parse(localStorage.getItem(historyStorageKey)) || [];
+            }
+            function saveHistory(url) {
+                if (isIncognitoMode) return; // Don't save if incognito
+                const history = getHistory();
+                const filteredHistory = history.filter(item => item.url !== url);
+                filteredHistory.unshift({ url: url, launchedAt: new Date().toLocaleString() });
+                if (filteredHistory.length > 50) filteredHistory.pop();
+                localStorage.setItem(historyStorageKey, JSON.stringify(filteredHistory));
+            }
+            async function renderHistory() {
+                archiveList.innerHTML = '<li class="text-gray-500 text-center p-4">Loading history...</li>';
+                const history = getHistory();
+                if (history.length === 0) {
+                    archiveList.innerHTML = '<li class="text-gray-500 text-center p-4">No videos have been launched yet.</li>';
+                    clearHistoryBtn.classList.add('hidden');
+                    return;
+                }
+                clearHistoryBtn.classList.remove('hidden');
+                const videoIdRegex = /(?:v=|\/embed\/|\.be\/|v\/|e\/|watch\?v=|\&v=)([^#\&\?]{11})/;
+                let historyHtml = '';
+                for (const item of history) {
+                    const videoIdMatch = item.url.match(videoIdRegex);
+                    let cardHtml;
+                    if (videoIdMatch) {
+                        try {
+                            const response = await fetch(`https://noembed.com/embed?url=https://www.youtube.com/watch?v=${videoIdMatch[1]}`);
+                            if (!response.ok) throw new Error('Network response was not ok');
+                            const data = await response.json();
+                            if (data.error) throw new Error('Video not found or private');
+                            cardHtml = `
+                                <div class="flex items-center space-x-4 p-3 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors history-card border-gradient" data-url="${item.url}">
+                                    <img src="${data.thumbnail_url}" alt="Video Thumbnail" class="w-32 h-18 object-cover rounded-md flex-shrink-0">
+                                    <div class="flex-grow overflow-hidden">
+                                        <p class="font-semibold truncate text-gray-800">${data.title}</p>
+                                        <p class="text-sm text-gray-500">${item.launchedAt}</p>
+                                    </div>
+                                    <div class="flex items-center space-x-2 p-2 history-loop-container">
+                                        <input type="checkbox" class="history-loop-checkbox">
+                                        <label class="text-gray-700 select-none">Loop</label>
+                                    </div>
+                                </div>`;
+                        } catch (error) {
+                            cardHtml = `<div class="flex items-center space-x-4 p-3 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors history-card border-gradient" data-url="${item.url}">
+                                            <div class="w-32 h-18 bg-gray-300 rounded-md flex-shrink-0 flex items-center justify-center text-gray-500">No Thumb</div>
+                                            <div class="flex-grow"><p class="font-medium truncate text-gray-800">${item.url}</p><p class="text-sm text-gray-500">${item.launchedAt}</p></div>
+                                            <div class="flex items-center space-x-2 p-2 history-loop-container"><input type="checkbox" class="history-loop-checkbox"><label class="text-gray-700 select-none">Loop</label></div>
+                                        </div>`;
+                        }
+                    } else {
+                         cardHtml = `<div class="flex items-center space-x-4 p-3 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors history-card border-gradient" data-url="${item.url}">
+                                        <div class="w-32 h-18 bg-gray-300 rounded-md flex-shrink-0 flex items-center justify-center text-gray-500">Playlist</div>
+                                        <div class="flex-grow"><p class="font-medium truncate text-gray-800">${item.url}</p><p class="text-sm text-gray-500">${item.launchedAt}</p></div>
+                                    </div>`;
+                    }
+                    historyHtml += `<li>${cardHtml}</li>`;
+                }
+                archiveList.innerHTML = historyHtml;
+            }
+            archiveList.addEventListener('click', (e) => {
+                const card = e.target.closest('.history-card');
+                const loopContainer = e.target.closest('.history-loop-container');
+                if (loopContainer) return;
+                if (card) {
+                    const url = card.dataset.url;
+                    const loopCheckboxEl = card.querySelector('.history-loop-checkbox');
+                    const shouldLoop = loopCheckboxEl ? loopCheckboxEl.checked : false;
+                    launchVideo(url, shouldLoop);
+                }
+            });
+            clearHistoryBtn.addEventListener('click', () => {
+                if (confirm('Are you sure you want to clear your entire launch history?')) {
+                    localStorage.removeItem(historyStorageKey);
+                    renderHistory();
+                }
+            });
+            // --- Core Launcher Logic ---
+            function launchVideo(urlToLaunch = null, loopOverride = null) {
+                const input = urlToLaunch || videoInput.value.trim();
+                const shouldLoop = loopOverride !== null ? loopOverride : loopCheckbox.checked;
+                if (!input) {
+                    showMessage("Please enter a URL or ID.", false);
+                    return;
+                }
+                const videoIdRegex = /(?:v=|\/embed\/|\.be\/|v\/|e\/|watch\?v=|\&v=)([^#\&\?]{11})/;
+                const playlistIdRegex = /(?:list=)([^#\&\?]*)/;
+                const videoIdMatch = input.match(videoIdRegex);
+                const playlistIdMatch = input.match(playlistIdRegex);
+                let embedUrl;
+                if (playlistIdMatch) {
+                    embedUrl = `https://www.youtube-nocookie.com/embed/videoseries?list=${playlistIdMatch[1]}&autoplay=1`;
+                } else if (videoIdMatch) {
+                    embedUrl = `https://www.youtube-nocookie.com/embed/${videoIdMatch[1]}?autoplay=1`;
+                    if (shouldLoop) embedUrl += `&loop=1&playlist=${videoIdMatch[1]}`;
+                } else {
+                    embedUrl = `https://www.youtube-nocookie.com/embed/${input}?autoplay=1`;
+                }
+                if (embedUrl) {
+                    if (!urlToLaunch && !isIncognitoMode) saveHistory(input); // Only save if not incognito
+                    openAndRedirect(embedUrl);
+                } else {
+                    showMessage("Could not find a valid YouTube Video or Playlist ID.", false);
+                }
+            }
+            function openAndRedirect(embedUrl) {
+                const videoTabTitle = localStorage.getItem('videoTabTitle') || 'Lunar'; // Changed default to Lunar
+                const faviconUrl = localStorage.getItem('cloakFavicon') || 'https://ssl.gstatic.com/classroom/favicon.png';
+                try {
+                    const newWindow = window.open('about:blank', '_blank');
+                    if (newWindow) {
+                        newWindow.document.write(`<!DOCTYPE html><html><head><title>${videoTabTitle}</title><link rel="icon" href="${faviconUrl}" type="image/x-icon"><style>body,html{margin:0;padding:0;height:100%;overflow:hidden;background-color:#000}iframe{width:100%;height:100%;border:none}</style></head><body><iframe src="${embedUrl}" allow="autoplay; encrypted-media" allowfullscreen></iframe></body></html>`);
+                        newWindow.document.close();
+                        // Redirect to Google after a short delay
+                        setTimeout(() => {
+                            window.location.href = 'https://www.google.com';
+                        }, 100);
+                    } else {
+                        showMessage("Pop-up blocked. Please allow pop-ups for this site.", false);
+                    }
+                } catch (e) { console.error("Failed to write to new window:", e); }
+            }
+            goButton.addEventListener('click', () => launchVideo());
+            videoInput.addEventListener('keypress', (e) => { 
+                if (e.key === 'Enter') launchVideo();
+            });
+            // --- Theme Exporter ---
+            exportThemeButton.addEventListener('click', () => {
+                const themeData = {
+                    theme: localStorage.getItem('theme') || 'light',
+                    incognitoMode: localStorage.getItem('incognitoMode') === 'true',
+                    performanceMode: localStorage.getItem('performanceMode') === 'true', // Add performance mode to export
+                    cursorTrailEnabled: localStorage.getItem('cursorTrailEnabled') === 'true', // NEW: Add cursor trail enabled to export
+                    customGradient: JSON.parse(localStorage.getItem('customGradient')) || {
+                        start: '#6e8efb',
+                        end: '#a777e3',
+                        direction: '135deg'
+                    },
+                    bubbleSettings: {
+                        speed: localStorage.getItem('bubbleSpeed') || '5',
+                        count: localStorage.getItem('bubbleCount') || '45',
+                        color: localStorage.getItem('bubbleColor') || '#3b82f6'
+                    },
+                    cloakSettings: {
+                        title: localStorage.getItem('cloakTitle') || 'Home',
+                        favicon: localStorage.getItem('cloakFavicon') || 'https://ssl.gstatic.com/classroom/favicon.png',
+                        videoTitle: localStorage.getItem('videoTabTitle') || 'Home'
+                    },
+                    cursorSettings: {
+                        size: localStorage.getItem('cursorSize') || '12',
+                        trailLength: localStorage.getItem('trailLength') || '15',
+                        trailSpacing: localStorage.getItem('trailSpacing') || '3',
+                        cursorColor: localStorage.getItem('cursorColor') || '#3b82f6',
+                        trailColor: localStorage.getItem('trailColor') || '#3b82f6',
+                        trailOpacity: localStorage.getItem('trailOpacity') || '0.7'
+                    },
+                    username: localStorage.getItem('username') || ''
+                };
+                const themeText = JSON.stringify(themeData, null, 2);
+                const blob = new Blob([themeText], { type: 'text/plain' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'lunar_theme_settings.json';
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+                showMessage("Theme settings exported successfully!");
+            });
+            // --- Theme Importer ---
+            importThemeButton.addEventListener('click', () => {
+                const file = importThemeFile.files[0];
+                if (!file) {
+                    showMessage("Please select a theme file to import.", false);
+                    return;
+                }
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    try {
+                        const themeData = JSON.parse(e.target.result);
+                        // Apply theme settings
+                        if (themeData.theme !== undefined) {
+                            applyTheme(themeData.theme);
+                        }
+                        if (themeData.incognitoMode !== undefined) {
+                            applyIncognitoMode(themeData.incognitoMode);
+                        }
+                        // Apply Performance Mode setting if present in import
+                        if (themeData.performanceMode !== undefined) {
+                            applyPerformanceMode(themeData.performanceMode);
+                        }
+                        // NEW: Apply Cursor Trail Enabled setting if present in import
+                        if (themeData.cursorTrailEnabled !== undefined) {
+                            localStorage.setItem('cursorTrailEnabled', themeData.cursorTrailEnabled ? 'true' : 'false');
+                            enableCursorTrailCheckbox.checked = themeData.cursorTrailEnabled;
+                            updateCursorTrailVisibility(); // Update visibility after loading setting
+                        }
+                        if (themeData.customGradient) {
+                            const grad = themeData.customGradient;
+                            document.documentElement.style.setProperty('--custom-gradient-start', grad.start);
+                            document.documentElement.style.setProperty('--custom-gradient-end', grad.end);
+                            document.documentElement.style.setProperty('--custom-gradient-direction', grad.direction);
+                            document.body.style.background = `linear-gradient(${grad.direction}, ${grad.start}, ${grad.end})`;
+                            localStorage.setItem('customGradient', JSON.stringify(grad));
+                            // Update UI elements
+                            gradientStartColor.value = grad.start;
+                            gradientEndColor.value = grad.end;
+                            gradientDirection.value = grad.direction;
+                            updateGradientPreview();
+                        }
+                        if (themeData.bubbleSettings) {
+                            const bs = themeData.bubbleSettings;
+                            localStorage.setItem('bubbleSpeed', bs.speed);
+                            localStorage.setItem('bubbleCount', bs.count);
+                            localStorage.setItem('bubbleColor', bs.color);
+                            bubbleSpeed.value = bs.speed;
+                            bubbleCount.value = bs.count;
+                            bubbleColor.value = bs.color;
+                            bubbleSpeedValue.textContent = `${bs.speed} seconds`;
+                            bubbleCountValue.textContent = `${bs.count} bubbles`;
+                            // Re-generate bubbles with new settings (only if performance mode is off)
+                            if (!performanceMode) {
+                                removeBubbles();
+                                generateBubbles(parseInt(bs.count));
+                            }
+                        }
+                        if (themeData.cloakSettings) {
+                            const cs = themeData.cloakSettings;
+                            localStorage.setItem('cloakTitle', cs.title);
+                            localStorage.setItem('cloakFavicon', cs.favicon);
+                            localStorage.setItem('videoTabTitle', cs.videoTitle);
+                            loadCloakSettings(); // Reload cloak settings to update the page
+                        }
+                        if (themeData.cursorSettings) {
+                            const curs = themeData.cursorSettings;
+                            localStorage.setItem('cursorSize', curs.size);
+                            localStorage.setItem('trailLength', curs.trailLength);
+                            localStorage.setItem('trailSpacing', curs.trailSpacing);
+                            localStorage.setItem('cursorColor', curs.cursorColor);
+                            localStorage.setItem('trailColor', curs.trailColor);
+                            localStorage.setItem('trailOpacity', curs.trailOpacity);
+                            // Update UI elements
+                            cursorSize.value = curs.size;
+                            trailLength.value = curs.trailLength;
+                            trailSpacing.value = curs.trailSpacing;
+                            cursorColor.value = curs.cursorColor;
+                            trailColor.value = curs.trailColor;
+                            trailOpacity.value = curs.trailOpacity;
+                            // Update preview
+                            cursorSizeValue.textContent = `${curs.size}px`;
+                            trailLengthValue.textContent = `${curs.trailLength} particles`;
+                            trailSpacingValue.textContent = `${curs.trailSpacing}px`;
+                            trailOpacityValue.textContent = curs.trailOpacity;
+                            cursorDot.style.width = `${curs.size}px`;
+                            cursorDot.style.height = `${curs.size}px`;
+                            cursorDot.style.backgroundColor = curs.cursorColor;
+                            // Apply settings to trails, respecting performance mode and individual setting
+                            cursorTrails.forEach(trail => {
+                                trail.style.backgroundColor = curs.trailColor;
+                            });
+                            updateCursorTrailVisibility(); // Apply saved opacity and enabled state
+                        }
+                        if (themeData.username !== undefined) {
+                            localStorage.setItem('username', themeData.username);
+                            loadUsername();
+                            setGreeting();
+                        }
+                        showMessage("Theme settings imported successfully!");
+                    } catch (error) {
+                        console.error("Error parsing theme file:", error);
+                        showMessage("Error: Invalid theme file format.", false);
+                    }
+                };
+                reader.readAsText(file);
+            });
+            // --- Welcome Modal Tabs ---
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const targetTab = button.dataset.tab;
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    tabContents.forEach(content => content.classList.remove('active'));
+                    button.classList.add('active');
+                    document.getElementById(targetTab + '-tab').classList.add('active');
+                });
+            });
+            // --- Navigation Event Listeners ---
+            settingsButton.addEventListener('click', () => showPage(settingsPage));
+            updateLogButton.addEventListener('click', () => showPage(updateLogMainPage));
+            creditsButton.addEventListener('click', () => showPage(creditsPage));
+            profileButton.addEventListener('click', () => showPage(profilePage));
+            helpButton.addEventListener('click', () => showPage(helpPage));
+            archiveButton.addEventListener('click', () => {
+                renderHistory();
+                showPage(archivePage);
+            });
+            cloakSettingsButton.addEventListener('click', () => {
+                loadCloakSettings(); // Load current settings into modal inputs
+                showPage(cloakPage);
+            });
+            cursorSettingsButton.addEventListener('click', () => {
+                showPage(cursorSettingsPage);
+            });
+            document.querySelectorAll('.update-log-version-button').forEach(button => {
+                button.addEventListener('click', () => showPage(document.getElementById(button.dataset.target)));
+            });
+            backFromSettingsButton.addEventListener('click', () => showPage(mainPage));
+            backFromCloakButton.addEventListener('click', () => showPage(settingsPage));
+            backFromCursorSettingsButton.addEventListener('click', () => showPage(settingsPage));
+            backFromUpdateLogMainButton.addEventListener('click', () => showPage(mainPage));
+            backFromHelpButton.addEventListener('click', () => showPage(settingsPage));
+            backFromCreditsButton.addEventListener('click', () => showPage(settingsPage));
+            backFromProfileButton.addEventListener('click', () => showPage(settingsPage));
+            backFromV26Button.addEventListener('click', () => showPage(updateLogMainPage)); // Added v26 button listener
+            backFromV25Button.addEventListener('click', () => showPage(updateLogMainPage)); // Added v25 button listener
+            backFromV24Button.addEventListener('click', () => showPage(updateLogMainPage)); // Added v24 button listener
+            backFromV23Button.addEventListener('click', () => showPage(updateLogMainPage));
+            backFromV22Button.addEventListener('click', () => showPage(updateLogMainPage));
+            backFromV21Button.addEventListener('click', () => showPage(updateLogMainPage));
+            backFromV20Button.addEventListener('click', () => showPage(updateLogMainPage));
+            backFromArchiveButton.addEventListener('click', () => showPage(mainPage));
+            closeMessage.addEventListener('click', () => messageBox.classList.add('hidden'));
+            closeWelcomeButton.addEventListener('click', () => {
+                welcomeModal.classList.add('hidden');
+                localStorage.setItem('lastSeenVersion', currentVersion);
+            });
 
-<!-- Service 5 -->
-<div class="service-card bg-white p-8 rounded-xl shadow-lg border border-gray-100 transition duration-300 autism-blue">
-<div class="w-16 h-16 rounded-full bg-indigo-100 flex items-center justify-center mb-6">
-<i class="fas fa-chart-line text-indigo-600 text-2xl"></i>
-</div>
-<h3 class="text-xl font-bold mb-3">Transition Planning</h3>
-<p class="text-gray-600 mb-4">Support for adolescents and young adults transitioning to adulthood, including vocational training and independent living skills.</p>
-</div>
+            // --- Performance Mode Event Listeners ---
+            performanceModeToggle.addEventListener('click', togglePerformanceMode);
+            performanceModeCheckbox.addEventListener('change', () => {
+                 applyPerformanceMode(performanceModeCheckbox.checked);
+            });
 
-<!-- Service 6 -->
-<div class="service-card bg-white p-8 rounded-xl shadow-lg border border-gray-100 transition duration-300 autism-blue">
-<div class="w-16 h-16 rounded-full bg-rose-100 flex items-center justify-center mb-6">
-<i class="fas fa-heart text-rose-600 text-2xl"></i>
-</div>
-<h3 class="text-xl font-bold mb-3">Sensory Integration</h3>
-<p class="text-gray-600 mb-4">Therapy programs designed to help individuals process and respond to sensory information in their environment.</p>
-</div>
-</div>
-</div>
-</section>
+            // --- INITIALIZATION ---
+            function initialize() {
+                const savedTheme = localStorage.getItem('theme');
+                const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                applyTheme(savedTheme || (prefersDark ? 'dark' : 'light'));
+                const savedIncognito = localStorage.getItem('incognitoMode');
+                applyIncognitoMode(savedIncognito === 'true');
+                // Load Performance Mode setting
+                const savedPerformanceMode = localStorage.getItem('performanceMode');
+                applyPerformanceMode(savedPerformanceMode === 'true');
+                // Load gradient settings
+                const savedGradient = localStorage.getItem('customGradient');
+                if (savedGradient) {
+                    const gradient = JSON.parse(savedGradient);
+                    gradientStartColor.value = gradient.start;
+                    gradientEndColor.value = gradient.end;
+                    gradientDirection.value = gradient.direction;
+                    // Apply saved gradient to CSS variables
+                    document.documentElement.style.setProperty('--custom-gradient-start', gradient.start);
+                    document.documentElement.style.setProperty('--custom-gradient-end', gradient.end);
+                    document.documentElement.style.setProperty('--custom-gradient-direction', gradient.direction);
+                    // Apply to body background as well
+                    document.body.style.background = `linear-gradient(${gradient.direction}, ${gradient.start}, ${gradient.end})`;
+                }
+                updateGradientPreview();
+                // Load bubble settings
+                const savedBubbleSpeed = localStorage.getItem('bubbleSpeed');
+                const savedBubbleCount = localStorage.getItem('bubbleCount');
+                const savedBubbleColor = localStorage.getItem('bubbleColor');
+                if (savedBubbleSpeed) bubbleSpeed.value = savedBubbleSpeed;
+                if (savedBubbleCount) bubbleCount.value = savedBubbleCount;
+                if (savedBubbleColor) bubbleColor.value = savedBubbleColor;
+                bubbleSpeedValue.textContent = `${bubbleSpeed.value} seconds`;
+                bubbleCountValue.textContent = `${bubbleCount.value} bubbles`;
+                loadCloakSettings();
+                loadUsername();
+                setGreeting();
+                showPage(mainPage);
+                // Only start generating bubbles if performance mode is off
+                if (!performanceMode) {
+                    generateBubbles(parseInt(bubbleCount.value));
+                }
+                checkVersion();
+                // Initialize custom cursor
+                initCustomCursor();
+            }
 
-<!-- About Section -->
-<section id="about" class="py-20">
-<div class="container mx-auto px-4">
-<div class="flex flex-col md:flex-row items-center gap-12">
-<div class="md:w-1/2">
-<img src="https://images.unsplash.com/photo-1582053433976-25c00369fc93?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
-alt="Therapist working with child with autism"
-class="rounded-xl shadow-xl w-full">
-</div>
-<div class="md:w-1/2">
-<h2 class="text-3xl md:text-4xl font-bold text-dark mb-6">About Our Center</h2>
-<p class="text-gray-600 mb-6">
-The Autism Care Center was established in 2010 with a mission to provide comprehensive, evidence-based support for individuals with autism spectrum disorder (ASD) and their families.
-</p>
-<p class="text-gray-600 mb-8">
-Our team of certified specialists, therapists, and educators work collaboratively to create personalized support plans that address the unique strengths and challenges of each individual.
-</p>
-<div class="grid grid-cols-2 gap-6">
-<div class="flex items-center">
-<i class="fas fa-check-circle text-secondary mr-3 text-xl"></i>
-<span>Individualized Support Plans</span>
-</div>
-<div class="flex items-center">
-<i class="fas fa-check-circle text-secondary mr-3 text-xl"></i>
-<span>Neurodiversity-Affirming Approach</span>
-</div>
-<div class="flex items-center">
-<i class="fas fa-check-circle text-secondary mr-3 text-xl"></i>
-<span>Family-Centered Care</span>
-</div>
-<div class="flex items-center">
-<i class="fas fa-check-circle text-secondary mr-3 text-xl"></i>
-<span>Community Integration</span>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
+            // Save bubble settings to localStorage
+            bubbleSpeed.addEventListener('change', () => {
+                localStorage.setItem('bubbleSpeed', bubbleSpeed.value);
+            });
+            bubbleCount.addEventListener('change', () => {
+                localStorage.setItem('bubbleCount', bubbleCount.value);
+            });
+            bubbleColor.addEventListener('change', () => {
+                localStorage.setItem('bubbleColor', bubbleColor.value);
+            });
 
-<!-- Resources Section -->
-<section id="resources" class="py-20 calm-bg">
-<div class="container mx-auto px-4">
-<div class="text-center mb-16">
-<h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">Helpful Resources</h2>
-<p class="text-gray-600 max-w-2xl mx-auto">Educational materials and support tools for families and individuals</p>
-</div>
-
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-<div class="bg-white p-8 rounded-xl shadow-md border border-gray-100">
-<div class="w-14 h-14 rounded-full bg-blue-100 flex items-center justify-center mb-6">
-<i class="fas fa-book text-primary text-xl"></i>
-</div>
-<h3 class="text-xl font-bold mb-3">Parent Guides</h3>
-<p class="text-gray-600 mb-4">Comprehensive guides on understanding autism, communication strategies, and daily living skills.</p>
-<a href="#" class="text-primary font-medium flex items-center">
-Download Resources <i class="fas fa-arrow-right ml-2"></i>
-</a>
-</div>
-
-<div class="bg-white p-8 rounded-xl shadow-md border border-gray-100">
-<div class="w-14 h-14 rounded-full bg-teal-100 flex items-center justify-center mb-6">
-<i class="fas fa-video text-secondary text-xl"></i>
-</div>
-<h3 class="text-xl font-bold mb-3">Educational Videos</h3>
-<p class="text-gray-600 mb-4">Visual learning resources demonstrating techniques for sensory regulation and social skills.</p>
-<a href="#" class="text-primary font-medium flex items-center">
-Watch Videos <i class="fas fa-arrow-right ml-2"></i>
-</a>
-</div>
-
-<div class="bg-white p-8 rounded-xl shadow-md border border-gray-100">
-<div class="w-14 h-14 rounded-full bg-purple-100 flex items-center justify-center mb-6">
-<i class="fas fa-calendar-alt text-accent text-xl"></i>
-</div>
-<h3 class="text-xl font-bold mb-3">Community Events</h3>
-<p class="text-gray-600 mb-4">Calendar of workshops, support groups, and social activities for individuals with autism.</p>
-<a href="#" class="text-primary font-medium flex items-center">
-View Calendar <i class="fas fa-arrow-right ml-2"></i>
-</a>
-</div>
-</div>
-</div>
-</section>
-
-<!-- Testimonials Section -->
-<section id="testimonials" class="py-20">
-<div class="container mx-auto px-4">
-<div class="text-center mb-16">
-<h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">Family Experiences</h2>
-<p class="text-gray-600 max-w-2xl mx-auto">Hear from families who have benefited from our support</p>
-</div>
-
-<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-<!-- Testimonial 1 -->
-<div class="testimonial-card bg-white p-8 rounded-xl shadow-md border-l-4 border-secondary">
-<div class="flex items-center mb-6">
-<div class="w-16 h-16 rounded-full bg-gray-200 mr-4"></div>
-<div>
-<h4 class="font-bold">Jennifer Martinez</h4>
-<p class="text-gray-600">Parent of 8-year-old with autism</p>
-</div>
-</div>
-<p class="text-gray-700 italic">"The early intervention program transformed our son's communication abilities. The therapists truly understand autism and work with his strengths rather than against his challenges."</p>
-</div>
-
-<!-- Testimonial 2 -->
-<div class="testimonial-card bg-white p-8 rounded-xl shadow-md border-l-4 border-primary">
-<div class="flex items-center mb-6">
-<div class="w-16 h-16 rounded-full bg-gray-200 mr-4"></div>
-<div>
-<h4 class="font-bold">David Chen</h4>
-<p class="text-gray-600">Parent of teenager with autism</p>
-</div>
-</div>
-<p class="text-gray-700 italic">"The transition planning services helped our daughter prepare for college life. Their focus on independence while providing appropriate support has been invaluable."</p>
-</div>
-
-<!-- Testimonial 3 -->
-<div class="testimonial-card bg-white p-8 rounded-xl shadow-md border-l-4 border-accent">
-<div class="flex items-center mb-6">
-<div class="w-16 h-16 rounded-full bg-gray-200 mr-4"></div>
-<div>
-<h4 class="font-bold">Sarah Williams</h4>
-<p class="text-gray-600">Caregiver for adult with autism</p>
-</div>
-</div>
-<p class="text-gray-700 italic">"The family support resources gave us strategies we never knew existed. We finally feel equipped to support our loved one in a way that respects their neurodiversity."</p>
-</div>
-</div>
-</div>
-</section>
-
-<!-- Contact Section -->
-<section id="contact" class="py-20">
-<div class="container mx-auto px-4">
-<div class="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden">
-<div class="md:flex">
-<div class="md:w-1/2 bg-primary text-white p-12">
-<h2 class="text-3xl font-bold mb-6">Get in Touch</h2>
-<p class="mb-8 opacity-90">We're here to answer your questions and provide information about our services.</p>
-
-<div class="space-y-6">
-<div class="flex items-start">
-<i class="fas fa-map-marker-alt mt-1 mr-4 text-secondary"></i>
-<div>
-<h3 class="font-bold">Location</h3>
-<p>5678 Support Avenue<br>Austin, TX 78704</p>
-</div>
-</div>
-
-<div class="flex items-start">
-<i class="fas fa-phone-alt mt-1 mr-4 text-secondary"></i>
-<div>
-<h3 class="font-bold">Phone</h3>
-<p>(512) 555-7890</p>
-</div>
-</div>
-
-<div class="flex items-start">
-<i class="fas fa-envelope mt-1 mr-4 text-secondary"></i>
-<div>
-<h3 class="font-bold">Email</h3>
-<p>info@autismcarecenter.org</p>
-</div>
-</div>
-
-<div class="flex items-start">
-<i class="fas fa-clock mt-1 mr-4 text-secondary"></i>
-<div>
-<h3 class="font-bold">Hours</h3>
-<p>Monday-Friday: 8am-6pm<br>Saturday: 9am-2pm</p>
-</div>
-</div>
-</div>
-</div>
-
-<div class="md:w-1/2 p-12">
-<form>
-<div class="mb-6">
-<label for="name" class="block text-gray-700 font-medium mb-2">Your Name</label>
-<input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Your full name">
-</div>
-
-<div class="mb-6">
-<label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
-<input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="your.email@example.com">
-</div>
-
-<div class="mb-6">
-<label for="subject" class="block text-gray-700 font-medium mb-2">Subject</label>
-<select id="subject" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
-<option value="">Select a topic</option>
-<option value="services">Information about services</option>
-<option value="resources">Request resources</option>
-<option value="support">Family support inquiry</option>
-<option value="other">Other</option>
-</select>
-</div>
-
-<div class="mb-6">
-<label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
-<textarea id="message" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="How can we assist you?"></textarea>
-</div>
-
-<button type="submit" class="w-full bg-secondary hover:bg-teal-700 text-white font-bold py-3 px-4 rounded-lg transition duration-300">
-Send Message
-</button>
-</form>
-</div>
-</div>
-</div>
-</div>
-</section>
-
-<!-- Footer -->
-<footer class="bg-dark text-white pt-16 pb-8">
-<div class="container mx-auto px-4">
-<div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
-<div>
-<div class="flex items-center space-x-2 mb-6">
-<div class="bg-primary w-10 h-10 rounded-full flex items-center justify-center">
-<i class="fas fa-brain text-white text-xl"></i>
-</div>
-<h2 class="text-2xl font-bold">Autism Care Center</h2>
-</div>
-<p class="text-gray-400 mb-6">Dedicated to supporting individuals with autism through evidence-based services, resources, and community connections.</p>
-<div class="flex space-x-4">
-<a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i></a>
-<a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
-<a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
-<a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin-in"></i></a>
-</div>
-</div>
-
-<div>
-<h3 class="text-xl font-bold mb-6">Quick Links</h3>
-<ul class="space-y-3">
-<li><a href="#home" class="footer-link text-gray-400">Home</a></li>
-<li><a href="#services" class="footer-link text-gray-400">Services</a></li>
-<li><a href="#about" class="footer-link text-gray-400">About Us</a></li>
-<li><a href="#resources" class="footer-link text-gray-400">Resources</a></li>
-<li><a href="#contact" class="footer-link text-gray-400">Contact</a></li>
-</ul>
-</div>
-
-<div>
-<h3 class="text-xl font-bold mb-6">Our Services</h3>
-<ul class="space-y-3">
-<li><a href="#" class="footer-link text-gray-400">Early Intervention</a></li>
-<li><a href="#" class="footer-link text-gray-400">School Support</a></li>
-<li><a href="#" class="footer-link text-gray-400">Social Skills Training</a></li>
-<li><a href="#" class="footer-link text-gray-400">Family Support</a></li>
-<li><a href="#" class="footer-link text-gray-400">Transition Planning</a></li>
-</ul>
-</div>
-
-<div>
-<h3 class="text-xl font-bold mb-6">Support Us</h3>
-<ul class="space-y-3">
-<li><a href="#" class="footer-link text-gray-400">Donate</a></li>
-<li><a href="#" class="footer-link text-gray-400">Volunteer</a></li>
-<li><a href="#" class="footer-link text-gray-400">Community Partners</a></li>
-<li><a href="#" class="footer-link text-gray-400">Events</a></li>
-<li><a href="#" class="footer-link text-gray-400">Newsletter</a></li>
-</ul>
-</div>
-</div>
-
-<div class="border-t border-gray-800 pt-8 text-center text-gray-500">
-<p>&copy; 2023 Autism Care Center. All rights reserved.</p>
-<p class="mt-2 text-sm">We respect neurodiversity and are committed to providing affirming, supportive services.</p>
-</div>
-</div>
-</footer>
+            initialize();
+        });
+    </script>
+    <!-- Cloudflare Web Analytics -->
+    <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "11b39fc8d040403ebc7dadd60dfadf6c"}'></script>
+    <!-- End Cloudflare Web Analytics -->
 </body>
 </html>
