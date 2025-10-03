@@ -408,7 +408,7 @@
         <div id="mainPage" class="page-transition">
             <div class="flex justify-between items-center mb-6">
                 <div class="flex items-center space-x-3">
-                    <h1 class="text-3xl font-bold text-gray-800">Lunar Launcher V2.6</h1> <!-- Rebranded title -->
+                    <h1 class="text-3xl font-bold text-gray-800">Lunar Launcher V2.7</h1> <!-- Rebranded title -->
                     <span id="incognitoBadge" class="incognito-badge">Incognito</span>
                 </div>
                 <div class="flex space-x-2">
@@ -653,6 +653,9 @@
                 <h1 class="text-3xl font-bold text-gray-800 ml-4">Update Log</h1>
             </div>
             <div class="text-left space-y-4">
+                <button class="update-log-version-button w-full text-left p-4 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors border-gradient" data-target="v27Page">
+                    <h3 class="text-xl font-semibold text-gray-800">V2.7 - October 2, 2025</h3>
+                </button>
                     <button class="update-log-version-button w-full text-left p-4 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors border-gradient" data-target="v26Page">
                     <h3 class="text-xl font-semibold text-gray-800">V2.6 - October 1, 2025</h3>
                 </button>
@@ -674,6 +677,22 @@
                 <button class="update-log-version-button w-full text-left p-4 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors border-gradient" data-target="v20Page">
                     <h3 class="text-xl font-semibold text-gray-800">V2.0 - September 10, 2025</h3>
                 </button>
+            </div>
+        </div>
+        <div id="v27Page" class="page-transition hidden">
+            <div class="flex items-center mb-6">
+                <button id="backFromV27Button" class="p-2 rounded-full bg-gray-200 text-gray-800 hover:bg-gray-300 transition-colors text-sm font-medium border-gradient">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                    </svg>
+                </button>
+                <h1 class="text-3xl font-bold text-gray-800 ml-4">Update V2.7</h1>
+            </div>
+            <div class="text-left p-4 bg-gray-100 rounded-lg border-gradient">
+                <h3 class="text-xl font-semibold text-gray-800">V2.7 - October 1, 2025</h3>
+                <ul class="list-disc list-inside mt-2 text-gray-600">
+                    <li><strong>Sync Importer File</strong> New 2.7 Feature..</li>
+                </ul>
             </div>
         </div>
           <div id="v26Page" class="page-transition hidden">
@@ -931,6 +950,7 @@
             const cursorSettingsPage = document.getElementById('cursorSettingsPage');
             const helpPage = document.getElementById('helpPage');
             const updateLogMainPage = document.getElementById('updateLogMainPage');
+            const v27Page = document.getElementById('v27Page'); // Added v27 page
             const v26Page = document.getElementById('v26Page'); // Added v26 page
             const v25Page = document.getElementById('v25Page'); // Added v25 page
             const v24Page = document.getElementById('v24Page'); // Added v24 page
@@ -955,6 +975,7 @@
             const backFromCursorSettingsButton = document.getElementById('backFromCursorSettingsButton');
             const backFromHelpButton = document.getElementById('backFromHelpButton');
             const backFromUpdateLogMainButton = document.getElementById('backFromUpdateLogMainButton');
+            const backFromV27Button = document.getElementById('backFromV27Button'); // Added v27 button 
             const backFromV26Button = document.getElementById('backFromV26Button'); // Added v26 button 
             const backFromV25Button = document.getElementById('backFromV25Button'); // Added v25 button
             const backFromV24Button = document.getElementById('backFromV24Button'); // Added v24 button
@@ -1037,10 +1058,8 @@
             for (let i = 0; i < cursorTrails.length; i++) {
                 trailPositions.push({ x: 0, y: 0 });
             }
-
             // --- Performance Mode Logic ---
             let performanceMode = false; // Flag for performance mode state
-
             function applyPerformanceMode(enabled) {
                 performanceMode = enabled;
                 if (enabled) {
@@ -1073,11 +1092,9 @@
                 }
                 localStorage.setItem('performanceMode', enabled ? 'true' : 'false');
             }
-
             function togglePerformanceMode() {
                 applyPerformanceMode(!performanceMode);
             }
-
             // --- Custom Cursor Implementation ---
             function initCustomCursor() {
                 // Load cursor settings from localStorage
@@ -1126,7 +1143,6 @@
                     enableCursorTrailCheckbox.checked = true;
                 }
                 updateCursorTrailVisibility(); // Apply initial state
-
                 // --- Add these variables for trail fade logic ---
                 let hideTrailTimer = null;
                 const trailHideDelay = 200; // Time in milliseconds after which trail disappears if mouse stops moving
@@ -1209,7 +1225,6 @@
                 document.head.appendChild(enforceCursorStyle);
                 // --- End Enforce cursor hiding CSS ---
             }
-
             // NEW: Function to update cursor trail visibility based on performance mode and individual setting
             function updateCursorTrailVisibility() {
                 if (performanceMode || !enableCursorTrailCheckbox.checked) {
@@ -1225,7 +1240,6 @@
                     });
                 }
             }
-
             // Update cursor settings in real-time
             cursorSize.addEventListener('input', () => {
                 const size = cursorSize.value;
@@ -1261,7 +1275,6 @@
                 localStorage.setItem('cursorTrailEnabled', enableCursorTrailCheckbox.checked ? 'true' : 'false');
                 updateCursorTrailVisibility(); // Update visibility based on new state
             });
-
             // Save cursor settings
             saveCursorSettingsButton.addEventListener('click', () => {
                 localStorage.setItem('cursorSize', cursorSize.value);
@@ -1550,6 +1563,30 @@
                     showMessage("Please enter a URL or ID.", false);
                     return;
                 }
+                
+                // Check if input is a text/html URL
+                if (input.startsWith('text/html')) {
+                    try {
+                        // Extract the HTML content from the data URL
+                        const base64Content = input.split(',')[1];
+                        const htmlContent = atob(base64Content);
+                        
+                        // Open the data URL in a new window
+                        const newWindow = window.open(input, '_blank');
+                        if (newWindow) {
+                            // Redirect to Google after a short delay
+                            setTimeout(() => {
+                                window.location.href = 'https://www.google.com';
+                            }, 100);
+                        } else {
+                            showMessage("Pop-up blocked. Please allow pop-ups for this site.", false);
+                        }
+                    } catch (e) {
+                        showMessage("Invalid data URL format.", false);
+                    }
+                    return;
+                }
+                
                 const videoIdRegex = /(?:v=|\/embed\/|\.be\/|v\/|e\/|watch\?v=|\&v=)([^#\&\?]{11})/;
                 const playlistIdRegex = /(?:list=)([^#\&\?]*)/;
                 const videoIdMatch = input.match(videoIdRegex);
@@ -1621,7 +1658,9 @@
                         trailColor: localStorage.getItem('trailColor') || '#3b82f6',
                         trailOpacity: localStorage.getItem('trailOpacity') || '0.7'
                     },
-                    username: localStorage.getItem('username') || ''
+                    username: localStorage.getItem('username') || '',
+                    // Add history to export
+                    history: getHistory()
                 };
                 const themeText = JSON.stringify(themeData, null, 2);
                 const blob = new Blob([themeText], { type: 'text/plain' });
@@ -1733,6 +1772,14 @@
                             loadUsername();
                             setGreeting();
                         }
+                        // Import history if present in import
+                        if (themeData.history !== undefined) {
+                            localStorage.setItem(historyStorageKey, JSON.stringify(themeData.history));
+                            // Reload history page if currently open
+                            if (archivePage.classList.contains('active')) {
+                                renderHistory();
+                            }
+                        }
                         showMessage("Theme settings imported successfully!");
                     } catch (error) {
                         console.error("Error parsing theme file:", error);
@@ -1753,7 +1800,13 @@
             });
             // --- Navigation Event Listeners ---
             settingsButton.addEventListener('click', () => showPage(settingsPage));
-            updateLogButton.addEventListener('click', () => showPage(updateLogMainPage));
+            updateLogButton.addEventListener('click', () => {
+                showPage(updateLogMainPage);
+                // Force re-render of history after showing update log
+                if (archivePage.classList.contains('active')) {
+                    renderHistory();
+                }
+            });
             creditsButton.addEventListener('click', () => showPage(creditsPage));
             profileButton.addEventListener('click', () => showPage(profilePage));
             helpButton.addEventListener('click', () => showPage(helpPage));
@@ -1778,6 +1831,7 @@
             backFromHelpButton.addEventListener('click', () => showPage(settingsPage));
             backFromCreditsButton.addEventListener('click', () => showPage(settingsPage));
             backFromProfileButton.addEventListener('click', () => showPage(settingsPage));
+            backFromV27Button.addEventListener('click', () => showPage(updateLogMainPage)); // Added v27 button listener
             backFromV26Button.addEventListener('click', () => showPage(updateLogMainPage)); // Added v26 button listener
             backFromV25Button.addEventListener('click', () => showPage(updateLogMainPage)); // Added v25 button listener
             backFromV24Button.addEventListener('click', () => showPage(updateLogMainPage)); // Added v24 button listener
@@ -1791,13 +1845,11 @@
                 welcomeModal.classList.add('hidden');
                 localStorage.setItem('lastSeenVersion', currentVersion);
             });
-
             // --- Performance Mode Event Listeners ---
             performanceModeToggle.addEventListener('click', togglePerformanceMode);
             performanceModeCheckbox.addEventListener('change', () => {
                  applyPerformanceMode(performanceModeCheckbox.checked);
             });
-
             // --- INITIALIZATION ---
             function initialize() {
                 const savedTheme = localStorage.getItem('theme');
@@ -1844,7 +1896,6 @@
                 // Initialize custom cursor
                 initCustomCursor();
             }
-
             // Save bubble settings to localStorage
             bubbleSpeed.addEventListener('change', () => {
                 localStorage.setItem('bubbleSpeed', bubbleSpeed.value);
@@ -1855,7 +1906,6 @@
             bubbleColor.addEventListener('change', () => {
                 localStorage.setItem('bubbleColor', bubbleColor.value);
             });
-
             initialize();
         });
     </script>
